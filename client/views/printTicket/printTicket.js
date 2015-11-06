@@ -11,6 +11,9 @@ Template.printTicket.helpers({
     endTime: function () {
         var moneyAdded = Session.get('moneyInserted');
         return moment().add(moneyAdded, 'hours').format('h:mm a')
+    },
+    timeDate: function () {
+        return moment().format('MMMM Do YYYY, h:mm:ss a')
     }
 });
 
