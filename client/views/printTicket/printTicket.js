@@ -17,6 +17,12 @@ Template.printTicket.helpers({
     }
 });
 
+Template.printTicket.events({
+    'click .btn-done': function () {
+        Router.go('start')
+    }
+});
+
 Template.printTicket.rendered = function () {
     Meteor.setTimeout(function () {
         Router.go('start');
