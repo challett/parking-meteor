@@ -1,9 +1,9 @@
 <template name="addTimeCoins">
-    {{>hardware coinsDisabled=false}}
+    {{>hardware coinsDisabled=false hidePlastic=true}}
     moneyAdded: ${{timeAdded}}
     current: {{currentTime}} <br>
     ends at: {{endTime}} <br>
-    
+
     <button class="btn btn-default btn-print">print ticket</button>
 
 </template>
