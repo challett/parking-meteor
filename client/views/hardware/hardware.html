@@ -1,8 +1,8 @@
 <template name="hardware">
     <div class="container hardware-container">
         {{#unless hidePlastic}}
-            <button class="btn btn-default btn-credit">Credit</button>
-            <button class="btn btn-default btn-debit">Debit</button>
+            <button class="btn btn-default btn-credit" disabled={{plasticDisabled}}>Credit</button>
+            <button class="btn btn-default btn-debit" disabled={{plasticDisabled}}>Debit</button>
         {{/unless}}
         <button class="btn btn-default btn-toonie" disabled={{coinsDisabled}}>toonie</button>
         <button class="btn btn-default btn-loonie" disabled={{coinsDisabled}}>loonie</button>

@@ -5,8 +5,12 @@
     <div id="main">
         <div class="container container-main">
             {{> yield}}
+            <hr>
             {{#if showBackButton}}
                 <button class="btn btn-default btn-back">back</button>
+            {{/if}}
+            {{#if showDoneButton}}
+                <button class="btn btn-default btn-done">Done</button>
             {{/if}}
         </div>
         {{! Also a sidebar! }}

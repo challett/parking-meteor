@@ -13,14 +13,12 @@ Template.printTicket.helpers({
         return moment().add(moneyAdded, 'hours').format('h:mm a')
     },
     timeDate: function () {
-        return moment().format('MMMM Do YYYY, h:mm:ss a')
+        return moment().format('MMMM Do YYYY')
     }
 });
 
 Template.printTicket.events({
-    'click .btn-done': function () {
-        Router.go('start')
-    }
+
 });
 
 Template.printTicket.rendered = function () {
