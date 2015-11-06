@@ -21,3 +21,6 @@ insecure                # Allow all DB writes from clients (for prototyping)
 iron:router
 momentjs:moment
 reactive-var
+steeve:jquery-qrcode
+stevezhu:lodash
+underscore

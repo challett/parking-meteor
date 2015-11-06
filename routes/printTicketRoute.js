@@ -2,7 +2,7 @@
  * Created by Connor on 11/3/2015.
  */
 HomeController = RouteController.extend({
-    template: 'start',
+    template: 'printTicket',
     waitOn: function() {
     },
     data: function() {
@@ -12,7 +12,7 @@ HomeController = RouteController.extend({
     }
 });
 
-Router.route('/', {
-    name: 'start',
+Router.route('/print', {
+    name: 'printTicket',
     controller: HomeController
 });

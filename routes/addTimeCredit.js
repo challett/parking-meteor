@@ -1,8 +1,8 @@
 /**
- * Created by Connor on 11/3/2015.
+ * Created by Connor on 11/5/2015.
  */
 HomeController = RouteController.extend({
-    template: 'start',
+    template: 'addTimeCredit',
     waitOn: function() {
     },
     data: function() {
@@ -12,7 +12,7 @@ HomeController = RouteController.extend({
     }
 });
 
-Router.route('/', {
-    name: 'start',
+Router.route('/addtime/credit', {
+    name: 'addTimeCredit',
     controller: HomeController
 });
