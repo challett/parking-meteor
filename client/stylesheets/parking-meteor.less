@@ -17,7 +17,7 @@ body {
 /*MAIN VIEW*/
 .mainSpace {
   background-color: white;
-  height: 600px;
+  height: 650px;
   width: 100%;
   position: relative;
   -webkit-border-radius: 2px;
@@ -26,13 +26,14 @@ body {
   -webkit-box-shadow: 0px 1px 1px 0px @shdwcolour;
   -moz-box-shadow: 0px 1px 1px 0px @shdwcolour;
   box-shadow: 0px 1px 1px 0px @shdwcolour;
+  color: black;
 }
 .whiteSpace {
   background-color: @primcolour;
   left: 0;
   right: 0;
   top: 0;
-  bottom: 10%;
+  bottom: 75px;
   position: absolute;
   height: auto;
   width: auto;
@@ -50,10 +51,35 @@ body {
   height: 0;
   position: absolute;
   bottom: -25px;
-  left: 8%;
   border-left: 25px solid transparent;
   border-right: 25px solid transparent;
   border-top: 25px solid @primcolour;
+}
+.timeView {
+  bottom: 60px;
+  left: 0;
+  font-size: 2em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: @primcolour;
+  text-align: center;
+  width: 50%;
+  height: 50px;
+  position: relative;
+  float: left;
+}
+.dateView {
+  bottom: 60px;
+  right: 0;
+  font-size: 2em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: @primcolour;
+  text-align: center;
+  width: 50%;
+  height: 50px;
+  position: relative;
+  float: right;
 }
 
 
