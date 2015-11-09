@@ -1,5 +1,13 @@
 <template name="hardware">
     <div class="container hardware-container">
+
+        <div class="cardInsert">
+            <div class="cardOptions">
+                <i class="fa fa-credit-card"></i>
+                <div class="arrow-right"></div>
+            </div>
+        </div>
+
         {{#unless hidePlastic}}
             <button class="btn btn-default btn-credit" disabled={{plasticDisabled}}>Credit</button>
             <button class="btn btn-default btn-debit" disabled={{plasticDisabled}}>Debit</button>
@@ -10,5 +18,4 @@
         <button class="btn btn-default btn-dime" disabled={{coinsDisabled}}>dime</button>
         <button class="btn btn-default btn-nickel" disabled={{coinsDisabled}}>nickel</button>
     </div>
-    <hr>
 </template>

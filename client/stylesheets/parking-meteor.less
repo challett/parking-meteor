@@ -1,1 +1,99 @@
 /* CSS declarations go here */
+
+/*COLOUR VARIABLES*/
+@bkgcolour: #B0B0B0;
+@primcolour: #31C057;
+@seccolour: #21833B;
+
+
+/*GENERAL ELEMENTS*/
+body {
+  background-color: @bkgcolour;
+}
+
+
+/*MAIN VIEW*/
+.mainSpace {
+  background-color: white;
+  left: 10%;
+  right: 10%;
+  bottom: 100px;
+  top: 225px;
+  height: auto;
+  width: auto;
+  position: absolute;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 6px 0px #222222;
+  -moz-box-shadow: 0px 0px 6px 0px #222222;
+  box-shadow: 0px 0px 6px 0px #222222;
+}
+.whiteSpace {
+  background-color: @primcolour;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 10%;
+  position: absolute;
+  height: auto;
+  width: auto;
+  padding: 20px;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 2em;
+  text-align: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.arrow-down {
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: -25px;
+  left: 8%;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-top: 25px solid @primcolour;
+}
+
+
+/*HARDWARE VIEW*/
+.cardInsert {
+  height: 150px;
+  width: 300px;
+  background-color: white;
+  position: relative;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  /*-webkit-box-shadow: 0px 0px 6px 0px #222222;
+  -moz-box-shadow: 0px 0px 6px 0px #222222;
+  box-shadow: 0px 0px 6px 0px #222222;*/
+}
+.cardOptions {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 150px;
+  width: auto;
+  height: auto;
+  position: absolute;
+  background-color: @primcolour;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  font-size: 75px;
+  color: @seccolour;
+  text-align: center;
+}
+.arrow-right {
+  width: 0;
+  height: 0;
+  right: -18px;
+  bottom: 18px;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+  border-left: 18px solid @primcolour;
+  position: absolute;
+}
