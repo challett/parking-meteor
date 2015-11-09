@@ -3,7 +3,8 @@
  */
 Template.printTicket.helpers({
     timeAdded: function () {
-    return Session.get('moneyInserted')
+        //returns number to two decimal places
+        return parseFloat(Math.round(Session.get('moneyInserted')*100)/100).toFixed(2)
     },
     currentTime: function () {
         return moment().format('h:mm a')
