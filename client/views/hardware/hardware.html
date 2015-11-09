@@ -1,21 +1,44 @@
 <template name="hardware">
     <div class="container hardware-container">
 
-        <div class="cardInsert">
-            <div class="cardOptions">
-                <i class="fa fa-credit-card"></i>
-                <div class="arrow-right"></div>
-            </div>
-        </div>
+            <div class="grid">
+                <div class="grid__col grid__col--2-of-12"></div>
 
-        {{#unless hidePlastic}}
-            <button class="btn btn-default btn-credit" disabled={{plasticDisabled}}>Credit</button>
-            <button class="btn btn-default btn-debit" disabled={{plasticDisabled}}>Debit</button>
-        {{/unless}}
-        <button class="btn btn-default btn-toonie" disabled={{coinsDisabled}}>toonie</button>
-        <button class="btn btn-default btn-loonie" disabled={{coinsDisabled}}>loonie</button>
-        <button class="btn btn-default btn-quarter" disabled={{coinsDisabled}}>quarter</button>
-        <button class="btn btn-default btn-dime" disabled={{coinsDisabled}}>dime</button>
-        <button class="btn btn-default btn-nickel" disabled={{coinsDisabled}}>nickel</button>
+                <div class="grid__col grid__col--3-of-12">
+                    <div class="cardInsert">
+                        <div class="grid__col grid__col--4-of-4" style="text-align: center; padding-left: 150px;">
+                            {{#unless hidePlastic}}
+                                <button class="btn btn-default btn-credit" disabled={{plasticDisabled}}>Credit</button>
+                                <button class="btn btn-default btn-debit" disabled={{plasticDisabled}}>Debit</button>
+                            {{/unless}}
+                        </div>
+                        <div class="cardOptions">
+                            <i class="fa fa-credit-card"></i>
+                            <div class="arrow-right"></div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="grid__col grid__col--5-of-12">
+                    <div class="cardInsert">
+
+                        <div class="grid__col grid__col--4-of-4" style="text-align: center; padding-left: 150px;">
+                            <button class="btn btn-default btn-toonie" disabled={{coinsDisabled}}>toonie</button>
+                            <button class="btn btn-default btn-loonie" disabled={{coinsDisabled}}>loonie</button>
+                            <button class="btn btn-default btn-quarter" disabled={{coinsDisabled}}>quarter</button>
+                            <button class="btn btn-default btn-dime" disabled={{coinsDisabled}}>dime</button>
+                            <button class="btn btn-default btn-nickel" disabled={{coinsDisabled}}>nickel</button>
+                        </div>
+
+                        <div class="cardOptions">
+                            $
+                            <div class="arrow-right"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
     </div>
 </template>
