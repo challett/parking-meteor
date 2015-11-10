@@ -26,9 +26,6 @@ Template.printTicket.events({
 });
 
 Template.printTicket.rendered = function () {
-    Meteor.setTimeout(function () {
-        Router.go('start');
-    }, 60000);
     $('#qrCode').qrcode({
         text: Session.get('lastTicketId'),
         render: 'canvas',
