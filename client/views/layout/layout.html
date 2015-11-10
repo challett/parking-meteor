@@ -5,23 +5,36 @@
     <div id="main">
         <div class="container container-main">
             {{> yield}}
+            <div class="grid__col grid__col--3-of-12"></div>
+            <div class="grid__col grid__col--3-of-12">
+
+                {{#if showFrenchButton}}
+                    <button class="btn btn-default btn-lang-container french-button">Francais</button>
+                {{/if}}
+                {{#if showEnglishButton}}
+                    <button class="btn btn-default btn-lang-container english-button">English</button>
+                {{/if}}
+                {{#if showBackButton}}
+                    <button class="btn btn-default btn-back-container btn-back">
+                        {{#if isFrench}}Precedent{{else}}Back{{/if}}
+                    </button>
+                {{/if}}
+                {{#if showDoneButton}}
+                    <button class="btn btn-default btn-done-container btn-done">
+                        {{#if isFrench}}Termine{{else}}Done{{/if}}
+                    </button>
+                {{/if}}
+            </div>
+
+            <div class="grid__col grid__col--4-of-12">
+                <div class="timeView">{{currentTime}}</div>
+                <div class="dateView">{{timeDate}}</div>
+            </div>
+
+            <div class="grid__col grid__col--2-of-12"></div>
+
             <br>
-            {{#if showBackButton}}
-                <button class="btn btn-default btn-back">
-                   {{#if isFrench}}Precedent{{else}}Back{{/if}}
-                </button>
-            {{/if}}
-            {{#if showDoneButton}}
-                <button class="btn btn-default btn-done">
-                    {{#if isFrench}}Termine{{else}}Done{{/if}}
-                </button>
-            {{/if}}
-            {{#if showFrenchButton}}
-                <button class="btn btn-default french-button">Francais</button>
-            {{/if}}
-            {{#if showEnglishButton}}
-                <button class="btn btn-default english-button">English mode</button>
-            {{/if}}
+
         </div>
         {{! Also a sidebar! }}
     </div>
