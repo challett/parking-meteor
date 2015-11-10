@@ -20,7 +20,10 @@ Template.addTimeCoins.helpers({
     },
     endTime: function () {
         var moneyAdded = Session.get('moneyInserted');
-        return moment().add(moneyAdded, 'hours').format('h:mm a');
+        return moment(Template.instance().now.get()).add(moneyAdded, 'hours').add(Session.get('voucherTimeAdded') || 0).format('h:mm a');
+    },
+    voucherValue: function () {
+        return (Session.get('voucherTimeAdded') / 3600000) ? (Session.get('voucherTimeAdded') / 3600000).toFixed(2) : 0;
     }
 });
 

@@ -99,9 +99,9 @@ body {
   position: relative;
 }
 .timeView {
-  bottom: 60px;
-  left: 0;
-  font-size: 2em;
+  bottom: 2.3em;
+  left: 1em;
+  font-size: 1.5em;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   color: @primcolour;
@@ -112,9 +112,9 @@ body {
   float: left;
 }
 .dateView {
-  bottom: 60px;
-  right: 0;
-  font-size: 2em;
+  bottom: 2.3em;
+  right: 0.5em;
+  font-size: 1.5em;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   color: @primcolour;
@@ -122,7 +122,7 @@ body {
   width: 50%;
   height: 50px;
   position: relative;
-  float: right;
+  float: left;
 }
 
 
@@ -212,9 +212,48 @@ body {
   padding-top: 30px;
   float: left;
 }
+.ticketSlot {
+  width: 190px;
+  height: 10px;
+  background-color: @seccolour;
+  position: relative;
+  left: 5px;
+  top: 155px;
+}
 .ticket {
-  height: auto;
-  width: 80%;
+  height: 300px;
+  width: 180px;
+  background-color: @offwhite;
+  top: 150px;
+  position: relative;
+  left: 10px;
+}
+.ticketText {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  color: @shdwcolour;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 1em;
+  top: -150px;
+}
+.tear{
+  width: 0;
+  height: 0;
+  bottom: 0px;
+  position: relative;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 9px solid @offwhite;
+  float: left;
+}
+.ticketTear {
+  width: 180px;
+  height: 10px;
+  position: absolute;
+  top: 300px;
 }
 
 
@@ -238,6 +277,26 @@ body {
   padding: 10px 20px 10px 20px;
   text-decoration: none;
   margin: 5px 5px 5px 5px;
+  width: 7em;
+  height: 3em;
+}
+.btn-lang-container {
+  bottom: 4.2em;
+  right: 7.5em;
+  position: relative;
+  float: left;
+}
+.btn-back-container {
+  bottom: 4.2em;
+  right: 7.5em;
+  position: relative;
+  float: left;
+}
+.btn-done-container {
+  bottom: 4.2em;
+  right: 7.5em;
+  position: relative;
+  float: left;
 }
 .btn:hover {
   background: @seccolour;

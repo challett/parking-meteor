@@ -13,6 +13,9 @@
                             {{#if isFrench}}Ajouter ou supprimer des temps (0.50 $ par demi-heure){{else}}Add or remove time ($0.50 per half hour){{/if}}
                         </h1>
                         timeAdded: {{timeAdded}} <br>
+                        {{#if voucherValue}}
+                            Voucher Credit: {{voucherValue}} hours <br>
+                        {{/if}}
                         current: {{currentTime}} <br>
                         ends at: {{endTime}} <br>
                         <button class="btn btn-default btn-add-time">+30 mins</button>

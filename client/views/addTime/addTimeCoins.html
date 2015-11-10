@@ -14,6 +14,9 @@
                         </h1>
 
                         Money inserted: ${{timeAdded}} <br>
+                        {{#if voucherValue}}
+                            Voucher Credit: {{voucherValue}} hours<br>
+                        {{/if}}
                         current: {{currentTime}} <br>
                         ends at: {{endTime}} <br>
                         <button class="btn btn-default btn-print">

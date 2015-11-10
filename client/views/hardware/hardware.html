@@ -40,17 +40,28 @@
                     </div>
                 </div>
 
-                <div class="grid__col grid__col--2-of-12">
-                    <div class="ticketPrint">
-                        <i class="fa fa-ticket"></i>
-                    </div>
-                </div>
+                        <div class="grid__col grid__col--2-of-12">
+                            <div class="ticketPrint">
+                                <i class="fa fa-ticket"></i>
+                            </div>
+                            <div class="ticketSlot"></div>
+                            {{#if currentTicket}}
+                                {{#with currentTicket}}
+                                    {{> ticket}}
+                                {{/with}}
+                            {{/if}}
+
+                        </div>
+
 
             </div>
 
     </div>
 
-    <form class="claim-voucher">
+    <form class="redeem-ticket">
         <input type="text" name="text" placeholder="Enter ticket ID to simulate scanning a ticket" />
     </form>
+    <form class="claim-voucher">
+    <input type="text" name="text" placeholder="Enter voucher ID to simulate inserting" />
+</form>
 </template>

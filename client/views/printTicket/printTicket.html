@@ -1,16 +1,7 @@
 <template name="printTicket">
     {{>hardware coinsDisabled=true plasticDisabled=true}}
-    <h1>THIS PAGE WILL CLOSE IN ONE MINUTE (take your ticket and enjoy your day)</h1>
     <div class="ticket" style="border:1em; border-style: solid; text-align: center">
-        Date printed: {{timeDate}} <br>
-        moneyAdded: ${{timeAdded}} <br>
-        current: {{currentTime}} <br>
-        ends at: {{endTime}} <br>
-        <div class="qr-code-container">
-            <div class='qrcode' id="qrCode">
-            </div>
-        </div>
-        {{ticketId}}
+
     </div>
 
 </template>
