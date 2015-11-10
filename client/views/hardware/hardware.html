@@ -44,12 +44,14 @@
                             <div class="ticketPrint">
                                 <i class="fa fa-ticket"></i>
                             </div>
-                            <div class="ticketSlot"></div>
-                            {{#if currentTicket}}
-                                {{#with currentTicket}}
-                                    {{> ticket}}
-                                {{/with}}
-                            {{/if}}
+                            <div class="ticketSlot">
+                                {{#if currentTicket}}
+                                    {{#with currentTicket}}
+                                        {{> ticket}}
+                                    {{/with}}
+                                {{/if}}
+                            </div>
+
 
                         </div>
 
