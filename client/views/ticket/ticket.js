@@ -1,7 +1,7 @@
 /**
- * Created by Connor on 11/5/2015.
+ * Created by Connor on 11/9/2015.
  */
-Template.printTicket.helpers({
+Template.ticket.helpers({
     timeAdded: function () {
         //returns number to two decimal places
         return parseFloat(Math.round(Session.get('moneyInserted')*100)/100).toFixed(2)
@@ -21,10 +21,15 @@ Template.printTicket.helpers({
     }
 });
 
-Template.printTicket.events({
-
-});
-
-Template.printTicket.rendered = function () {
-
+Template.ticket.rendered = function () {
+    $('#qrCode').qrcode({
+        text: Session.get('lastTicketId'),
+        render: 'canvas',
+        width: 80,
+        height: 80,
+        ecLevel: 'H',
+        fill: "#910101",
+        background: "#fafafa",
+        radius: 0.2
+    })
 };
