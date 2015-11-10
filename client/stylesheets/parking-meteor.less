@@ -212,9 +212,48 @@ body {
   padding-top: 30px;
   float: left;
 }
+.ticketSlot {
+  width: 190px;
+  height: 10px;
+  background-color: @seccolour;
+  position: relative;
+  left: 5px;
+  top: 155px;
+}
 .ticket {
-  height: auto;
-  width: 80%;
+  height: 300px;
+  width: 180px;
+  background-color: @offwhite;
+  top: 150px;
+  position: relative;
+  left: 10px;
+}
+.ticketText {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  color: @shdwcolour;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 1em;
+  top: -150px;
+}
+.tear{
+  width: 0;
+  height: 0;
+  bottom: 0px;
+  position: relative;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 9px solid @offwhite;
+  float: left;
+}
+.ticketTear {
+  width: 180px;
+  height: 10px;
+  position: absolute;
+  top: 300px;
 }
 
 
