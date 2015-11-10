@@ -15,6 +15,9 @@ Template.printTicket.helpers({
     },
     timeDate: function () {
         return moment().format('MMMM Do YYYY')
+    },
+    ticketId: function () {
+        return Session.get('lastTicketId');
     }
 });
 
@@ -27,7 +30,7 @@ Template.printTicket.rendered = function () {
         Router.go('start');
     }, 60000);
     $('#qrCode').qrcode({
-        text: 'lolData',
+        text: Session.get('lastTicketId'),
         render: 'canvas',
         width: 128,
         height: 128,
