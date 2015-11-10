@@ -2,7 +2,11 @@
     <div class="container hardware-container">
 
             <div class="grid">
-                <div class="grid__col grid__col--2-of-12"></div>
+                <div class="grid__col grid__col--2-of-12">
+                    <div class="qrScan">
+                        <i class="fa fa-qrcode"></i>
+                    </div>
+                </div>
 
                 <div class="grid__col grid__col--3-of-12">
                     <div class="cardInsert">
@@ -22,15 +26,13 @@
 
                 <div class="grid__col grid__col--5-of-12">
                     <div class="cardInsert">
-
                         <div class="grid__col grid__col--4-of-4" style="text-align: center; padding-left: 150px;">
-                            <button class="btn btn-default btn-toonie" disabled={{coinsDisabled}}>toonie</button>
-                            <button class="btn btn-default btn-loonie" disabled={{coinsDisabled}}>loonie</button>
-                            <button class="btn btn-default btn-quarter" disabled={{coinsDisabled}}>quarter</button>
-                            <button class="btn btn-default btn-dime" disabled={{coinsDisabled}}>dime</button>
-                            <button class="btn btn-default btn-nickel" disabled={{coinsDisabled}}>nickel</button>
+                            <button class="btn btn-default btn-toonie" disabled={{coinsDisabled}}>$2</button>
+                            <button class="btn btn-default btn-loonie" disabled={{coinsDisabled}}>$1</button>
+                            <button class="btn btn-default btn-quarter" disabled={{coinsDisabled}}>$0.25</button>
+                            <button class="btn btn-default btn-dime" disabled={{coinsDisabled}}>$0.10</button>
+                            <button class="btn btn-default btn-nickel" disabled={{coinsDisabled}}>$0.05</button>
                         </div>
-
                         <div class="cardOptions">
                             $
                             <div class="arrow-right"></div>
@@ -38,7 +40,17 @@
                     </div>
                 </div>
 
+                <div class="grid__col grid__col--2-of-12">
+                    <div class="ticketPrint">
+                        <i class="fa fa-ticket"></i>
+                    </div>
+                </div>
+
             </div>
 
     </div>
+
+    <form class="claim-voucher">
+        <input type="text" name="text" placeholder="Enter ticket ID to simulate scanning a ticket" />
+    </form>
 </template>

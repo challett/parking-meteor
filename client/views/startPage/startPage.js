@@ -26,3 +26,20 @@ Template.start.events({
       Router.go('addTimeCoins')
   }
 });
+
+Template.start.helpers({
+    'currentTime': function () {
+        return Template.instance().now.get().format('h:mm a');
+    },
+    'timeDate': function () {
+        return moment().format('MMMM Do YYYY')
+    }
+});
+
+Template.start.created = function () {
+    this.now = new ReactiveVar(moment());
+    var self = this;
+    Meteor.setInterval(function() {
+        self.now.set(moment());
+    }, 60000);
+};

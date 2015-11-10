@@ -2,17 +2,20 @@
  * Created by Connor on 11/9/2015.
  */
 HomeController = RouteController.extend({
-    template: 'createVoucher',
+    template: 'claimTicket',
     waitOn: function() {
     },
     data: function() {
+        return {
+            ticket: Tickets.findOne(this.params._id)
+        }
     },
     before: function () {
         this.next();
     }
 });
 
-Router.route('/voucher/create', {
-    name: 'createVoucher',
+Router.route('/ticket/:_id', {
+    name: 'claimTicket',
     controller: HomeController
 });

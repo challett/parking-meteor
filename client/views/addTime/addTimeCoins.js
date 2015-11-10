@@ -35,10 +35,13 @@ Template.addTimeCoins.events({
         }
     },
     'click .btn-print': function () {
+        var moneyAdded = Session.get('moneyInserted');
+        Session.set('lastTicketId',  Tickets.insert({
+            expirationTime: moment().add(moneyAdded, 'hours').toDate()
+        }));
         Router.go('printTicket')
     },
     'click .btn-loonie': function () {
-
         Session.set('moneyInserted', Session.get('moneyInserted') + 1);
     },
     'click .btn-toonie': function () {
