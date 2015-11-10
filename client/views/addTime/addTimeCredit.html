@@ -16,17 +16,24 @@
                         <h1 class="instructions">
                             {{#if isFrench}}Ajouter ou supprimer des temps (0.50 $ par demi-heure){{else}}Add or remove time ($0.50 per half hour){{/if}}
                         </h1>
-                        timeAdded: {{timeAdded}} <br>
-                        {{#if voucherValue}}
-                            Voucher Credit: {{voucherValue}} hours <br>
-                        {{/if}}
-                        current: {{currentTime}} <br>
-                        ends at: {{endTime}} <br>
-                        <button class="btn btn-default btn-add-time">+30 mins</button>
-                        <button class="btn btn-default btn-remove-time">-30 mins</button> <br>
-                        <button class="btn btn-default btn-print">
-                            {{#if isFrench}}Billet imprime{{else}}print ticket{{/if}}
-                        </button>
+                        <br>
+                        <div class="grid__col grid__col--6-of-12">
+                            {{#if isFrench}}Temps ajoute: {{timeAdded}}{{else}}Time added: {{timeAdded}}{{/if}} <br>
+                            {{#if voucherValue}}
+                                Voucher Credit: {{voucherValue}} hours <br>
+                            {{/if}}
+                            {{#if isFrench}}Debut a: {{currentTime}}{{else}}Start time: {{currentTime}}{{/if}} <br>
+                            {{#if isFrench}}Expire a: {{endTime}}{{else}}Expires at: {{endTime}}{{/if}} <br>
+                        </div>
+                        <div class="grid__col grid__col--3-of-12">
+                            <button class="btn btn-default btn-add-time">+0.5 {{#if isFrench}}heure{{else}}hours{{/if}}</button> <br>
+                            <button class="btn btn-default btn-remove-time">-0.5 {{#if isFrench}}heure{{else}}hours{{/if}}</button> <br>
+                        </div>
+                        <div class="grid__col grid__col--3-of-12">
+                            <button class="btn btn-default btn-print">
+                                {{#if isFrench}}Billet imprime{{else}}Print ticket{{/if}}
+                            </button>
+                        </div>
                     </div>
                     <div class="arrow-down"></div>
                 </div>
