@@ -1,27 +1,33 @@
- <template name="ticket">
-    <div class="ticket">
-        <div class="ticketText">
-            Date printed: {{timeDate}} <br>
-            moneyAdded: ${{timeAdded}} <br>
-            current: {{currentTime}} <br>
-            ends at: {{endTime}} <br>
-            <div class="qr-code-container">
-                <div class='qrcode' id="qrCode">
+<template name="ticket" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+
+
+
+                <div class="ticket">
+                    <div class="ticketText">
+                        {{#if isFrench}}IMPRIME LE{{else}}PRINTED ON{{/if}} <br> {{timeDate}} <br><br>
+                        {{#if isFrench}}MONTANT PAYE{{else}}AMOUNT PAID{{/if}} <br> ${{timeAdded}} <br><br>
+                        {{#if isFrench}}DEBUT A{{else}}START TIME{{/if}} {{currentTime}} <br><br>
+                        {{#if isFrench}}EXPIRE A{{else}}EXPIRES AT{{/if}} {{endTime}} <br><br>
+                        <div class="qr-code-container">
+                            <div class='qrcode' id="qrCode"></div>
+                        </div>
+                        {{_id}}
+                    </div>
+                    <div class="ticketTear">
+                        <div class="tear"></div>
+                        <div class="tear"></div>
+                        <div class="tear"></div>
+                        <div class="tear"></div>
+                        <div class="tear"></div>
+                        <div class="tear"></div>
+                        <div class="tear"></div>
+                        <div class="tear"></div>
+                        <div class="tear"></div>
+                        <div class="tear"></div>
+                    </div>
                 </div>
-            </div>
-            {{_id}}
-        </div>
-        <div class="ticketTear">
-            <div class="tear"></div>
-            <div class="tear"></div>
-            <div class="tear"></div>
-            <div class="tear"></div>
-            <div class="tear"></div>
-            <div class="tear"></div>
-            <div class="tear"></div>
-            <div class="tear"></div>
-            <div class="tear"></div>
-            <div class="tear"></div>
-        </div>
-    </div>
+
+
+
 </template>
