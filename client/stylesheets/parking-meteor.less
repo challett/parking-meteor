@@ -6,7 +6,7 @@
 @shdwcolour: #8A9AA0;
 @primcolour: #31C057;
 @seccolour: #21833B;
-
+@tertcolour: #6CDA89;
 
 /*GENERAL ELEMENTS*/
 body {
@@ -26,7 +26,6 @@ body {
   -webkit-box-shadow: 0px 1px 1px 0px @shdwcolour;
   -moz-box-shadow: 0px 1px 1px 0px @shdwcolour;
   box-shadow: 0px 1px 1px 0px @shdwcolour;
-  color: black;
 }
 .whiteSpace {
   background-color: @primcolour;
@@ -54,6 +53,50 @@ body {
   border-left: 25px solid transparent;
   border-right: 25px solid transparent;
   border-top: 25px solid @primcolour;
+}
+.progBarEmpty {
+  width: 100%;
+  height: 20px;
+  background-color: @tertcolour;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+.progBarOneThird {
+  height: 100%;
+  width: 33%;
+  background-color: @seccolour;
+  left: 0;
+  position: relative;
+  border-top-left-radius: 2px;
+}
+.progBarTwoThird {
+  height: 100%;
+  width: 66%;
+  background-color: @seccolour;
+  left: 0;
+  position: relative;
+  border-top-left-radius: 2px;
+}
+.progBarThreeThird {
+  height: 100%;
+  width: 100%;
+  background-color: @seccolour;
+  left: 0;
+  position: relative;
+  border-top-left-radius: 2px;
+}
+.progBarPoint {
+  width: 0;
+  height: 0;
+  left: 33%;
+  top: -20px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid @seccolour;
+  position: relative;
 }
 .timeView {
   bottom: 60px;
@@ -87,7 +130,7 @@ body {
 .cardInsert {
   height: 150px;
   width: 100%;
-  background-color: #F6F7F8;
+  background-color: @offwhite; 
   position: relative;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -95,6 +138,9 @@ body {
   -webkit-box-shadow: 0px 1px 1px 0px @shdwcolour;
   -moz-box-shadow: 0px 1px 1px 0px @shdwcolour;
   box-shadow: 0px 1px 1px 0px @shdwcolour;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   margin-top: 20px;
   margin-bottom: 30px;
 }
@@ -124,6 +170,51 @@ body {
   border-bottom: 18px solid transparent;
   border-left: 18px solid @primcolour;
   position: absolute;
+}
+.qrScan {
+  height: 120px;
+  width: 200px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-shadow: 0px 1px 1px 0px @shdwcolour;
+  -moz-box-shadow: 0px 1px 1px 0px @shdwcolour;
+  box-shadow: 0px 1px 1px 0px @shdwcolour;
+  position: relative;
+  background-color: @primcolour;
+  color: @seccolour;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 4.5em;
+  margin-top: 20px;
+  margin-left: 20px;
+  padding-top: 30px;
+  float: right;
+}
+.ticketPrint {
+  height: 120px;
+  width: 200px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-shadow: 0px 1px 1px 0px @shdwcolour;
+  -moz-box-shadow: 0px 1px 1px 0px @shdwcolour;
+  box-shadow: 0px 1px 1px 0px @shdwcolour;
+  position: relative;
+  background-color: @primcolour;
+  color: @seccolour;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 4.5em;
+  margin-top: 20px;
+  padding-top: 30px;
+  float: left;
+}
+.ticket {
+  height: auto;
+  width: 80%;
 }
 
 
