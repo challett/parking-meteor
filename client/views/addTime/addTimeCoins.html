@@ -10,13 +10,15 @@
                 <div class="mainSpace">
                     <div class="whiteSpace">
                         <h1 class="instructions">
-                            Insert coins to add time
+                            {{#if isFrench}}Inserer des pieces pour ajouter du temps{{else}}Insert coins to add time{{/if}}
                         </h1>
 
                         Money inserted: ${{timeAdded}} <br>
                         current: {{currentTime}} <br>
                         ends at: {{endTime}} <br>
-                        <button class="btn btn-default btn-print">print ticket</button>
+                        <button class="btn btn-default btn-print">
+                            {{#if isFrench}}Billet imprime{{else}}print ticket{{/if}}
+                        </button>
                         <div class="arrow-down"></div>
                     </div>
                 </div>

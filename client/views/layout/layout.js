@@ -7,6 +7,12 @@ Template.appLayout.events({
     },
     'click .btn-done': function () {
         Router.go('start')
+    },
+    'click .french-button': function () {
+        Session.set('language','french')
+    },
+    'click .english-button': function () {
+        Session.set('language','english')
     }
 });
 
@@ -16,5 +22,11 @@ Template.appLayout.helpers({
     },
     showDoneButton: function () {
         return (lodash.includes(['printTicket'], Router.current().route.getName()))
+    },
+    showFrenchButton: function () {
+        return Session.equals('language', 'english')
+    },
+    showEnglishButton: function () {
+        return Session.equals('language', 'french')
     }
 });

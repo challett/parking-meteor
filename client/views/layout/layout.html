@@ -7,10 +7,20 @@
             {{> yield}}
             <br>
             {{#if showBackButton}}
-                <button class="btn btn-default btn-back">back</button>
+                <button class="btn btn-default btn-back">
+                   {{#if isFrench}}Precedent{{else}}Back{{/if}}
+                </button>
             {{/if}}
             {{#if showDoneButton}}
-                <button class="btn btn-default btn-done">Done</button>
+                <button class="btn btn-default btn-done">
+                    {{#if isFrench}}Termine{{else}}Done{{/if}}
+                </button>
+            {{/if}}
+            {{#if showFrenchButton}}
+                <button class="btn btn-default french-button">Francais</button>
+            {{/if}}
+            {{#if showEnglishButton}}
+                <button class="btn btn-default english-button">English mode</button>
             {{/if}}
         </div>
         {{! Also a sidebar! }}

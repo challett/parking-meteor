@@ -10,14 +10,16 @@
                 <div class="mainSpace">
                     <div class="whiteSpace">
                         <h1 class="instructions">
-                            Add or remove time (half hour amounts only)
+                            {{#if isFrench}}Ajouter ou supprimer des temps (0.50 $ par demi-heure){{else}}Add or remove time ($0.50 per half hour){{/if}}
                         </h1>
                         timeAdded: {{timeAdded}} <br>
                         current: {{currentTime}} <br>
                         ends at: {{endTime}} <br>
                         <button class="btn btn-default btn-add-time">+30 mins</button>
                         <button class="btn btn-default btn-remove-time">-30 mins</button> <br>
-                        <button class="btn btn-default btn-print">print ticket</button>
+                        <button class="btn btn-default btn-print">
+                            {{#if isFrench}}Billet imprime{{else}}print ticket{{/if}}
+                        </button>
                         <div class="arrow-down"></div>
                     </div>
                 </div>
