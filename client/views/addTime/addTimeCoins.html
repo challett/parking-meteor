@@ -16,16 +16,20 @@
                         <h1 class="instructions">
                             {{#if isFrench}}Inserer des pieces pour ajouter du temps{{else}}Insert coins to add time{{/if}}
                         </h1>
-
-                        Money inserted: ${{timeAdded}} <br>
-                        {{#if voucherValue}}
-                            Voucher Credit: {{voucherValue}} hours<br>
-                        {{/if}}
-                        current: {{currentTime}} <br>
-                        ends at: {{endTime}} <br>
-                        <button class="btn btn-default btn-print">
-                            {{#if isFrench}}Billet imprime{{else}}print ticket{{/if}}
-                        </button>
+                        <br>
+                        <div class="grid__col grid__col--6-of-12">
+                            {{#if isFrench}}L'argent insere: {{timeAdded}} ${{else}}Money inserted: ${{timeAdded}}{{/if}} <br>
+                            {{#if voucherValue}}
+                                Voucher Credit: {{voucherValue}} hours<br>
+                            {{/if}}
+                            {{#if isFrench}}Debut a: {{currentTime}}{{else}}Start time: {{currentTime}}{{/if}} <br>
+                            {{#if isFrench}}Expire a: {{endTime}}{{else}}Expires at: {{endTime}}{{/if}} <br>
+                        </div>
+                        <div class="grid__col grid__col--6-of-12">
+                            <button class="btn btn-default btn-print">
+                                {{#if isFrench}}Billet imprime{{else}}Print ticket{{/if}}
+                            </button>
+                        </div>
                     </div>
                     <div class="arrow-down"></div>
                 </div>
