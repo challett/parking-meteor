@@ -7,18 +7,25 @@
 @primcolour: #31C057;
 @seccolour: #21833B;
 @tertcolour: #6CDA89;
+@redlight: #cb3434;
+@reddark: #832222;
+@bluelight: #34cbcb;
+@bluedark: #258f8f;
+@darkgrey: #707070;
 
 
 /*GENERAL ELEMENTS*/
 body {
   background-color: @bkgcolour;
+  padding: 0;
+  margin: 0 0;
 }
 
 
 /*MAIN VIEW*/
 .mainSpace {
   background-color: white;
-  height: 650px;
+  height: 850px;
   width: 100%;
   position: relative;
   -webkit-border-radius: 2px;
@@ -30,6 +37,7 @@ body {
 }
 .whiteSpace {
   background-color: @primcolour;
+  padding: 10px;
   left: 0;
   right: 0;
   top: 0;
@@ -37,20 +45,19 @@ body {
   position: absolute;
   height: auto;
   width: auto;
-  padding: 20px;
   color: @offwhite;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 2em;
   text-align: center;
-  border-top-left-radius: 2px;
   border-top-right-radius: 2px;
+  border-top-left-radius: 2px;
 }
 .arrow-down {
   width: 0;
   height: 0;
   position: relative;
-  top: 575px;
+  top: 775px;
   border-left: 25px solid transparent;
   border-right: 25px solid transparent;
   border-top: 25px solid @primcolour;
@@ -61,8 +68,8 @@ body {
   width: 100%;
   height: 20px;
   background-color: @tertcolour;
-  border-top-left-radius: 2px;
   border-top-right-radius: 2px;
+  border-top-left-radius: 2px;
   top: 0;
   left: 0;
   position: absolute;
@@ -86,25 +93,66 @@ body {
   font-size: 1.5em;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
-  color: @primcolour;
+  color: @darkgrey;
   text-align: center;
-  width: 100%;
+  width: auto;
   height: auto;
-  position: relative;
-  float: right;
-  top: -50px;
+  position: absolute;
+  bottom: 36px;
+  right: 25px;
 }
 .dateView {
-  font-size: 1.5em;
+  font-size: 1.3em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: @darkgrey;
+  text-align: center;
+  width: auto;
+  height: auto;
+  position: absolute;
+  bottom: 12px;
+  right: 25px;
+}
+.weatherContainer {
+  height: 100px;
+  width: 100%;
+  background-color: @offwhite;
+  position: absolute;
+  top: 630px;
+}
+.weatherTime {
+  width: 25%;
+  height: auto;
+  font-size: 1.3em;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
-  color: @primcolour;
+  color: @offwhite;
   text-align: center;
+  background-color: @seccolour;
+  position: relative;
+  float: left;
+}
+.weatherIcon {
   width: 100%;
   height: auto;
-  position: relative;
-  right: 0;
-  top: -50px;
+  background-color: @offwhite;
+  font-size: 0.7em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: @darkgrey;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.weatherTemp {
+  width: 100%;
+  height: auto;
+  background-color: @primcolour;
+  font-size: 1.5em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: @offwhite;
+  text-align: center;
 }
 
 
@@ -265,29 +313,35 @@ body {
   padding: 10px 20px 10px 20px;
   text-decoration: none;
   margin: 5px 5px 5px 5px;
-  width: 7em;
-  height: 3em;
+  width: 100px;
+  height: 45px;
 }
 .btn-lang-container {
-  bottom: 4.2em;
-  right: 7.5em;
-  position: relative;
-  float: left;
+  bottom: 10px;
+  left: 25px;
+  position: absolute;
 }
 .btn-back-container {
-  bottom: 4.2em;
-  right: 7.5em;
-  position: relative;
-  float: left;
+  bottom: 10px;
+  left: 160px;
+  position: absolute;
+  background-color: @redlight;
+  border-bottom-color: @reddark;
 }
 .btn-done-container {
-  bottom: 4.2em;
-  right: 7.5em;
+  display: block;
+  margin: 480px auto;
   position: relative;
-  float: left;
 }
 .btn-print {
   height: 6em !important;
+}
+.btn-map-container {
+  position: absolute;
+  bottom: 10px;
+  right: 165px;
+  background-color: @bluelight;
+  border-bottom-color: @bluedark;
 }
 .btn:hover {
   background: @seccolour;
