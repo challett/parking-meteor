@@ -5,6 +5,9 @@ Template.addTimeCredit.helpers({
     timeAdded: function () {
         return Session.get('moneyInserted') + " hours"
     },
+    noMoneyInserted: function () {
+        return !(Session.get('moneyInserted'))
+    },
     currentTime: function () {
         return moment(CurrentTime.get()).format('h:mm a')
     },
@@ -28,10 +31,12 @@ Template.addTimeCredit.events({
     },
     'click .btn-print': function () {
         var moneyAdded = Session.get('moneyInserted');
-        Session.set('lastTicketId',  Tickets.insert({
-            expirationTime: moment().add(moneyAdded, 'hours').toDate()
-        }));
-        Router.go('printTicket')
+        if (moneyAdded !== 0) {
+            Session.set('lastTicketId', Tickets.insert({
+                expirationTime: moment().add(moneyAdded, 'hours').toDate()
+            }));
+            Router.go('printTicket')
+        }
     }
 });
 
