@@ -15,8 +15,7 @@ Template.weather.rendered = function(){
         var lng = pos.coords.longitude;
         Meteor.call('getWeatherData', lat, lng, function (err, res) {
             if(!err){
-                self.weatherData.set(res);
-                Session.set('weatherData', self.weatherData.get())
+                Session.set('weatherData', res)
             }
         });
     }
@@ -25,7 +24,13 @@ Template.weather.rendered = function(){
         console.warn('ERROR(' + err.code + '): ' + err.message);
     }
     if (navigator.geolocation) {
+        console.log('weather data updated');
         navigator.geolocation.getCurrentPosition(success, error, geooptions);
+        Meteor.setInterval(function () {
+            console.log('weather data updated');
+            navigator.geolocation.getCurrentPosition(success, error, geooptions);
+        }, 600000); //Update weather every 10 min
+
     }
 };
 
