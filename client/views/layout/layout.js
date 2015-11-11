@@ -33,7 +33,7 @@ Template.appLayout.helpers({
         return Template.instance().now.get().format('h:mm a');
     },
     timeDate: function () {
-        return moment().format('MMMM Do YYYY')
+        return moment().format('MMM Do YYYY')
     }
 });
 

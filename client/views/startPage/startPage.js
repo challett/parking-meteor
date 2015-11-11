@@ -1,9 +1,9 @@
 Template.start.events({
   'click .btn-debit': function () {
-    Router.go('addTimeCredit')
+    Router.go('enterPin')
   },
   'click .btn-credit': function () {
-    Router.go('addTimeCredit')
+    Router.go('enterPin')
   },
   'click .btn-loonie': function () {
       Session.set('moneyInserted', 1);
