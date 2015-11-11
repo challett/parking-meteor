@@ -8,6 +8,7 @@
 @seccolour: #21833B;
 @tertcolour: #6CDA89;
 
+
 /*GENERAL ELEMENTS*/
 body {
   background-color: @bkgcolour;
@@ -48,11 +49,13 @@ body {
 .arrow-down {
   width: 0;
   height: 0;
-  position: absolute;
-  bottom: -25px;
+  position: relative;
+  top: 575px;
   border-left: 25px solid transparent;
   border-right: 25px solid transparent;
   border-top: 25px solid @primcolour;
+  margin-left: auto;
+  margin-right: auto;
 }
 .progBarEmpty {
   width: 100%;
@@ -64,65 +67,44 @@ body {
   left: 0;
   position: absolute;
 }
-.progBarOneThird {
+.progBar {
   height: 100%;
-  width: 33%;
   background-color: @seccolour;
   left: 0;
-  position: relative;
-  border-top-left-radius: 2px;
-}
-.progBarTwoThird {
-  height: 100%;
-  width: 66%;
-  background-color: @seccolour;
-  left: 0;
-  position: relative;
-  border-top-left-radius: 2px;
-}
-.progBarThreeThird {
-  height: 100%;
-  width: 100%;
-  background-color: @seccolour;
-  left: 0;
-  position: relative;
+  position: absolute;
   border-top-left-radius: 2px;
 }
 .progBarPoint {
   width: 0;
   height: 0;
-  left: 33%;
-  top: -20px;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
   border-left: 10px solid @seccolour;
-  position: relative;
+  position: absolute;
 }
 .timeView {
-  bottom: 2.3em;
-  left: 1em;
   font-size: 1.5em;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   color: @primcolour;
   text-align: center;
-  width: 50%;
-  height: 50px;
+  width: 100%;
+  height: auto;
   position: relative;
-  float: left;
+  float: right;
+  top: -50px;
 }
 .dateView {
-  bottom: 2.3em;
-  right: 0.5em;
   font-size: 1.5em;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   color: @primcolour;
   text-align: center;
-  width: 50%;
-  height: 50px;
+  width: 100%;
+  height: auto;
   position: relative;
-  float: left;
+  right: 0;
+  top: -50px;
 }
 
 
@@ -201,7 +183,7 @@ body {
   -webkit-box-shadow: 0px 1px 1px 0px @shdwcolour;
   -moz-box-shadow: 0px 1px 1px 0px @shdwcolour;
   box-shadow: 0px 1px 1px 0px @shdwcolour;
-  position: relative;
+  position: absolute;
   background-color: @primcolour;
   color: @seccolour;
   text-align: center;
@@ -224,20 +206,23 @@ body {
   height: 300px;
   width: 180px;
   background-color: @offwhite;
-  top: 150px;
-  position: relative;
-  left: 10px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  -webkit-box-shadow: 0px 3px 10px 0px @shdwcolour;
+  -moz-box-shadow: 0px 3px 10px 0px @shdwcolour;
+  box-shadow: 0px 3px 10px 0px @shdwcolour;
 }
 .ticketText {
   width: 100%;
   height: 100%;
   position: relative;
-  color: @shdwcolour;
+  color: black;
   text-align: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Rokkitt', serif;
   font-weight: 700;
   font-size: 1em;
-  top: -150px;
+  margin-top: 10px;
 }
 .tear{
   width: 0;
@@ -251,7 +236,7 @@ body {
 }
 .ticketTear {
   width: 180px;
-  height: 10px;
+  height: 9px;
   position: absolute;
   top: 300px;
 }
@@ -298,8 +283,15 @@ body {
   position: relative;
   float: left;
 }
+.btn-print {
+  height: 6em !important;
+}
 .btn:hover {
   background: @seccolour;
   border-bottom-color: @primcolour;
   text-decoration: none;
+}
+.btn:disabled {
+  background: #ababab;
+  border-bottom-color: #818181;
 }

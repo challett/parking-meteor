@@ -1,5 +1,5 @@
 <template name="addTimeCoins">
-    {{>hardware coinsDisabled=false}}
+    {{>hardware coinsDisabled=false plasticDisabled=true}}
 
     <div class="container">
 
@@ -9,26 +9,33 @@
             <div class="grid__col grid__col--8-of-12">
                 <div class="mainSpace">
                     <div class="whiteSpace">
+                        <div class="progBarEmpty">
+                            <div class="progBar" style="width: 66%;"></div>
+                            <div class="progBarPoint" style="left: 66%;"></div>
+                        </div>
                         <h1 class="instructions">
                             {{#if isFrench}}Inserer des pieces pour ajouter du temps{{else}}Insert coins to add time{{/if}}
                         </h1>
-
-                        Money inserted: ${{timeAdded}} <br>
-                        {{#if voucherValue}}
-                            Voucher Credit: {{voucherValue}} hours<br>
-                        {{/if}}
-                        current: {{currentTime}} <br>
-                        ends at: {{endTime}} <br>
-                        <button class="btn btn-default btn-print">
-                            {{#if isFrench}}Billet imprime{{else}}print ticket{{/if}}
-                        </button>
-                        <div class="arrow-down"></div>
+                        <br>
+                        <div class="grid__col grid__col--6-of-12">
+                            {{#if isFrench}}L'argent insere: {{timeAdded}} ${{else}}Money inserted: ${{timeAdded}}{{/if}} <br>
+                            {{#if voucherValue}}
+                                Voucher Credit: {{voucherValue}} hours<br>
+                            {{/if}}
+                            {{#if isFrench}}Debut a: {{currentTime}}{{else}}Start time: {{currentTime}}{{/if}} <br>
+                            {{#if isFrench}}Expire a: {{endTime}}{{else}}Expires at: {{endTime}}{{/if}} <br>
+                        </div>
+                        <div class="grid__col grid__col--6-of-12">
+                            <button class="btn btn-default btn-print">
+                                {{#if isFrench}}Billet imprime{{else}}Print ticket{{/if}}
+                            </button>
+                        </div>
                     </div>
+                    <div class="arrow-down"></div>
                 </div>
             </div>
 
         </div>
-
     </div>
 
 </template>

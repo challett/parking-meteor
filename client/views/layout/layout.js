@@ -13,6 +13,9 @@ Template.appLayout.events({
     },
     'click .english-button': function () {
         Session.set('language','english')
+    },
+    'click .btn': function () {
+        audio.play()
     }
 });
 
@@ -33,7 +36,7 @@ Template.appLayout.helpers({
         return Template.instance().now.get().format('h:mm a');
     },
     timeDate: function () {
-        return moment().format('MMMM Do YYYY')
+        return moment().format('MMM Do YYYY')
     }
 });
 
