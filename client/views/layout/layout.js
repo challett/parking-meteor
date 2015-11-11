@@ -36,10 +36,10 @@ Template.appLayout.helpers({
         return Session.equals('language', 'french')
     },
     currentTime: function () {
-        return moment(CurrentTime.get()).format('h:mm a');
+        return moment(CurrentTime.get()).format('h:mm A');
     },
     timeDate: function () {
-        return  moment(CurrentTime.get()).format('MMM Do YYYY')
+        return  moment(CurrentTime.get()).format('MMM D YYYY')
     },
     showMapButton: function () {
         return !(lodash.includes(['map'], Router.current().route.getName()))
