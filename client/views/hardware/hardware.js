@@ -26,12 +26,12 @@ Template.hardware.events({
     },
     'click .btn-coin': function (e) {
         if (lodash.includes(['start'], Router.current().route.getName())) {
-            Session.set('moneyInserted', value);
+            Session.set('moneyInserted', parseFloat(e.target.id));
             Router.go('addTimeCoins')
         } else if (lodash.includes(['addTimeCoins'], Router.current().route.getName())) {
-            Session.set('moneyInserted', Session.get('moneyInserted') + value);
+            Session.set('moneyInserted', Session.get('moneyInserted') + parseFloat(e.target.id));
         } else if (lodash.includes(['map'], Router.current().route.getName())) {
-            Session.set('moneyInserted', value);
+            Session.set('moneyInserted', parseFloat(e.target.id));
             Router.go('addTimeCoins', {}, {replaceState: true})
         }
     },
