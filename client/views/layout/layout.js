@@ -16,6 +16,9 @@ Template.appLayout.events({
     },
     'click .btn': function () {
         Template.instance().audio.play()
+    },
+    'click .number': function () {
+        Template.instance().audio.play()
     }
 });
 

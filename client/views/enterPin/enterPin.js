@@ -11,11 +11,16 @@ Template.enterPin.helpers({
         return Session.get('pinError')
     },
     asterisks: function () {
-        var astString = ' ';
+        var astString = '';
         lodash.times(Session.get('enteredPin').length, function(n) {
             astString += '*'
         });
         return astString;
+    },
+    emptyPin: function () {
+        if (Session.get('enteredPin').length=== 0 ){
+            return true
+        }
     }
 });
 
