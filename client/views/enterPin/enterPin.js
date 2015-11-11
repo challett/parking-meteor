@@ -34,7 +34,8 @@ Template.enterPin.events({
         }
     },
     'click .correction': function () {
-        Session.set('enteredPin', lodash.dropRight(Session.get('enteredPin')))
+        var enteredPin = Session.get('enteredPin');
+        Session.set('enteredPin', enteredPin.substring(0, enteredPin.length - 1);
     }
 
 });
