@@ -32,9 +32,9 @@ Template.enterPin.events({
     },
     'click .submit': function () {
         if (Session.get('enteredPin') === '1234') {
-            Router.go('addTimeCredit');
+            Router.go('addTimeCredit', {}, {replaceState: true});
         } else {
-            Session.set('enteredPin', '')
+            Session.set('enteredPin', '');
             Session.set('pinError', 'Your pin is incorrect, please try again')
         }
     },
