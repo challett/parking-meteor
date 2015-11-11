@@ -17,6 +17,11 @@ Template.map.rendered = function () {
             });
             var trafficLayer = new google.maps.TrafficLayer();
             trafficLayer.setMap(map);
+            var marker = new google.maps.Marker({
+                position: {lat: lat, lng: lng},
+                map: map,
+                title: 'You Are Here'
+            });
         }, function (err) {
             console.warn(err)}, geooptions);
     }
