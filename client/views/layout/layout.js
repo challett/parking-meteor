@@ -22,6 +22,12 @@ Template.appLayout.events({
     },
     'click .number': function () {
         Template.instance().audio.play()
+    },
+    'click .correction': function () {
+        Template.instance().audio.play()
+    },
+    'click .submit': function () {
+        Template.instance().audio.play()
     }
 });
 
