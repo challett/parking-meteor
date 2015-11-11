@@ -35,7 +35,7 @@ Template.enterPin.events({
     },
     'click .correction': function () {
         var enteredPin = Session.get('enteredPin');
-        Session.set('enteredPin', enteredPin.substring(0, enteredPin.length - 1);
+        Session.set('enteredPin', enteredPin.substring(0, enteredPin.length - 1))
     }
 
 });
