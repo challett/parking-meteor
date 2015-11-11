@@ -24,69 +24,18 @@ Template.hardware.events({
         // Clear form
         event.target.text.value = "";
     },
-    'click .btn-loonie': function () {
+    'click .btn-coin': function (e) {
         if (lodash.includes(['start'], Router.current().route.getName())) {
-            Session.set('moneyInserted', Session.get('moneyInserted') + 1);
+            Session.set('moneyInserted', value);
             Router.go('addTimeCoins')
         } else if (lodash.includes(['addTimeCoins'], Router.current().route.getName())) {
-            Session.set('moneyInserted', Session.get('moneyInserted') + 1);
+            Session.set('moneyInserted', Session.get('moneyInserted') + value);
         } else if (lodash.includes(['map'], Router.current().route.getName())) {
-            Session.set('moneyInserted', Session.get('moneyInserted') + 1);
+            Session.set('moneyInserted', value);
             Router.go('addTimeCoins', {}, {replaceState: true})
         }
     },
-    'click .btn-toonie': function () {
-        if (lodash.includes(['start'], Router.current().route.getName())){
-            Session.set('moneyInserted', Session.get('moneyInserted') + 2);
-            Router.go('addTimeCoins')
-        } else if (lodash.includes(['addTimeCoins'], Router.current().route.getName())){
-            Session.set('moneyInserted', Session.get('moneyInserted') + 2);
-        } else if (lodash.includes(['map'], Router.current().route.getName())) {
-            Session.set('moneyInserted', Session.get('moneyInserted') + 2);
-            Router.go('addTimeCoins', {}, {replaceState: true})
-        }
-    },
-    'click .btn-quarter': function () {
-        if (lodash.includes(['start'], Router.current().route.getName())){
-            Session.set('moneyInserted', Session.get('moneyInserted') + 0.25);
-            Router.go('addTimeCoins')
-        } else if (lodash.includes(['addTimeCoins'], Router.current().route.getName())){
-            Session.set('moneyInserted', Session.get('moneyInserted') + 0.25);
-        } else if (lodash.includes(['map'], Router.current().route.getName())) {
-            Session.set('moneyInserted', Session.get('moneyInserted') + 0.25);
-            Router.go('addTimeCoins', {}, {replaceState: true})
-        }
-    },
-    'click .btn-dime': function () {
-        if (lodash.includes(['start'], Router.current().route.getName())){
-            Session.set('moneyInserted', Session.get('moneyInserted') + 0.10);
-            Router.go('addTimeCoins')
-        } else if (lodash.includes(['addTimeCoins'], Router.current().route.getName())){
-            Session.set('moneyInserted', Session.get('moneyInserted') + 0.10);
-        } else if (lodash.includes(['map'], Router.current().route.getName())) {
-            Session.set('moneyInserted', Session.get('moneyInserted') + 0.10);
-            Router.go('addTimeCoins', {}, {replaceState: true})
-        }
-    },
-    'click .btn-nickel': function () {
-        if (lodash.includes(['start'], Router.current().route.getName())){
-            Session.set('moneyInserted', Session.get('moneyInserted') + 0.05);
-            Router.go('addTimeCoins')
-        } else if (lodash.includes(['addTimeCoins'], Router.current().route.getName())){
-            Session.set('moneyInserted', Session.get('moneyInserted') + 0.05);
-        } else if (lodash.includes(['map'], Router.current().route.getName())) {
-            Session.set('moneyInserted', Session.get('moneyInserted') + 0.05);
-            Router.go('addTimeCoins', {}, {replaceState: true})
-        }
-    },
-    'click .btn-debit': function () {
-        if (lodash.includes(['start'], Router.current().route.getName())) {
-            Router.go('enterPin')
-        } else if (lodash.includes(['map'], Router.current().route.getName())) {
-            Router.go('enterPin', {}, {replaceState: true})
-        }
-    },
-    'click .btn-credit': function () {
+    'click .btn-plastic': function () {
         if (lodash.includes(['start'], Router.current().route.getName())) {
             Router.go('enterPin')
         } else if (lodash.includes(['map'], Router.current().route.getName())) {

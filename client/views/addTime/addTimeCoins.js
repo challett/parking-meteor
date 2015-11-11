@@ -2,7 +2,6 @@
  * Created by Connor on 11/3/2015.
  */
 Template.addTimeCoins.created = function () {
-    Session.set('timeToAdd', 0);
 };
 
 Template.addTimeCoins.helpers({
@@ -22,15 +21,6 @@ Template.addTimeCoins.helpers({
 });
 
 Template.addTimeCoins.events({
-    'click .btn-add-time': function () {
-        //if (Session.get('timeToAdd'))
-        Session.set('timeToAdd', Session.get('timeToAdd') + 30)
-    },
-    'click .btn-remove-time': function () {
-        if (Session.get('timeToAdd') !== 0){
-            Session.set('timeToAdd', Session.get('timeToAdd') - 30)
-        }
-    },
     'click .btn-print': function () {
         var moneyAdded = Session.get('moneyInserted');
         if (moneyAdded !== 0) {
