@@ -7,6 +7,11 @@ Template.map.rendered = function () {
         timeout: 60000,
         maximumAge: 0
     };
+    var contentString = '<p style="color:#000">You are here</p>';
+
+    var infowindow = new google.maps.InfoWindow({
+        content: contentString
+    });
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (pos) {
             var lat = pos.coords.latitude;
@@ -23,6 +28,9 @@ Template.map.rendered = function () {
             var map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 14,
                 center: {lat: lat, lng: lng}
+            });
+            marker.addListener('click', function toggleBounce() {
+                infowindow.open(map, marker);
             });
             trafficLayer.setMap(map);
             marker.setMap(map);
