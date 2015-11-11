@@ -1,58 +1,21 @@
 <template name="appLayout">
     <head>
         <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, height=device-height, width=device-width" />
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Rokkitt:700' rel='stylesheet' type='text/css'>
     </head>
     <div id="main">
         <div class="container container-main">
-            {{> yield}}
-
+            {{>hardware}}
             <div class="grid__col grid__col--2-of-12"></div>
 
             <div class="grid__col grid__col--8-of-12">
 
                 <div class="mainSpace">
                     <div class="whiteSpace">
-                        <div class="progBarEmpty">
-                            <div class="progBar" style="width: 33%;"></div>
-                            <div class="progBarPoint" style="left: 33%;"></div>
-                        </div>
-
-                        <h1 class="instructions">
-                            {{#if isFrench}}Selectionnez la methode de paiement ou inserer des pieces pour commencer{{else}}Method of Payment <br> or Insert Coins to Begin{{/if}}
-                        </h1>
-                        
+                        {{> yield}}
                     </div>
-                    <div class="arrow-down"></div>
-
-                    {{#if showDoneButton}}
-                        <button class="btn btn-default btn-done-container btn-done">
-                            {{#if isFrench}}Termine{{else}}Done{{/if}}
-                        </button>
-                    {{/if}}
-
-                    {{#if showFrenchButton}}
-                        <button class="btn btn-default btn-lang-container french-button">Francais</button>
-                    {{/if}}
-                    {{#if showEnglishButton}}
-                        <button class="btn btn-default btn-lang-container english-button">English</button>
-                    {{/if}}
-
-                    {{#if showBackButton}}
-                        <button class="btn btn-default btn-back-container btn-back">
-                            {{#if isFrench}}Precedent{{else}}Back{{/if}}
-                        </button>
-                    {{/if}}
-
-                    <div class="timeView">{{currentTime}}</div>
-                    <div class="dateView">{{timeDate}}</div>
-
-                    {{#if showMapButton}}
-                        <button class="btn btn-default btn-map-container btn-map">Map</button>
-                    {{/if}}
-
-                    <div class="weatherContainer">
-                        {{>weather}}
-                    </div>
+                    {{> footer}}
 
                 </div>
             </div>

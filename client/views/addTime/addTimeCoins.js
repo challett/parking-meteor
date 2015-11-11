@@ -38,19 +38,5 @@ Template.addTimeCoins.events({
         }));
         Router.go('printTicket')
     },
-    'click .btn-loonie': function () {
-        Session.set('moneyInserted', Session.get('moneyInserted') + 1);
-    },
-    'click .btn-toonie': function () {
-        Session.set('moneyInserted', Session.get('moneyInserted') + 2);
-    },
-    'click .btn-quarter': function () {
-        Session.set('moneyInserted', Session.get('moneyInserted') + 0.25);
-    },
-    'click .btn-dime': function () {
-        Session.set('moneyInserted', Session.get('moneyInserted') + 0.1);
-    },
-    'click .btn-nickel': function () {
-        Session.set('moneyInserted', Session.get('moneyInserted') + 0.05);
-    }
+
 });

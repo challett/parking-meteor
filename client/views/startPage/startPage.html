@@ -1,9 +1,10 @@
-<head>
-    <!--FONTS-->
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Rokkitt:700' rel='stylesheet' type='text/css'>
-</head>
-
 <template name="start">
-    {{>hardware coinsDisabled=false}}
+    <div class="progBarEmpty">
+        <div class="progBar" style="width: 33%;"></div>
+        <div class="progBarPoint" style="left: 33%;"></div>
+    </div>
+
+    <h1 class="instructions">
+        {{#if isFrench}}Selectionnez la methode de paiement ou inserer des pieces pour commencer{{else}}Method of Payment <br> or Insert Coins to Begin{{/if}}
+    </h1>
 </template>
