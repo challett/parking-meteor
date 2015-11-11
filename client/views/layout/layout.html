@@ -9,27 +9,31 @@
             <div class="grid__col grid__col--3-of-12">
 
                 {{#if showFrenchButton}}
-                    <button class="btn btn-default btn-lang-container french-button">Francais</button>
+                    <button class="btn btn-default btn-lang-container french-button" style="float:left;">Francais</button>
                 {{/if}}
                 {{#if showEnglishButton}}
-                    <button class="btn btn-default btn-lang-container english-button">English</button>
+                    <button class="btn btn-default btn-lang-container english-button" style="float: left;">English</button>
                 {{/if}}
                 {{#if showBackButton}}
-                    <button class="btn btn-default btn-back-container btn-back">
+                    <button class="btn btn-default btn-back-container btn-back" style="float: right;">
                         {{#if isFrench}}Precedent{{else}}Back{{/if}}
                     </button>
                 {{/if}}
                 {{#if showDoneButton}}
-                    <button class="btn btn-default btn-done-container btn-done">
+                    <button class="btn btn-default btn-done-container btn-done" style="float: right;">
                         {{#if isFrench}}Termine{{else}}Done{{/if}}
                     </button>
                 {{/if}}
             </div>
 
-            <div class="grid__col grid__col--4-of-12">
+            <div class="grid__col grid__col--2-of-12">
                 <div class="timeView">{{currentTime}}</div>
+            </div>
+            <div class="grid__col grid__col--2-of-12">
                 <div class="dateView">{{timeDate}}</div>
             </div>
+
+
 
             <div class="grid__col grid__col--2-of-12"></div>
 
