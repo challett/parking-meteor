@@ -6,11 +6,11 @@ Template.addTimeCredit.helpers({
         return Session.get('moneyInserted') + " hours"
     },
     currentTime: function () {
-        return Template.instance().now.get().format('h:mm a')
+        return moment(CurrentTime.get()).format('h:mm a')
     },
     endTime: function () {
         var moneyAdded = Session.get('moneyInserted');
-        return moment(Template.instance().now.get()).add(moneyAdded, 'hours').add(Session.get('voucherTimeAdded') || 0).format('h:mm a')
+        return moment(CurrentTime.get()).add(moneyAdded, 'hours').add(Session.get('voucherTimeAdded') || 0).format('h:mm a')
     },
     voucherValue: function () {
         return (Session.get('voucherTimeAdded') / 3600000) ? (Session.get('voucherTimeAdded') / 3600000).toFixed(2) : 0;
@@ -19,7 +19,6 @@ Template.addTimeCredit.helpers({
 
 Template.addTimeCredit.events({
     'click .btn-add-time': function () {
-        //if (Session.get('timeToAdd'))
         Session.set('moneyInserted', Session.get('moneyInserted') + 0.5)
     },
     'click .btn-remove-time': function () {
@@ -37,11 +36,5 @@ Template.addTimeCredit.events({
 });
 
 Template.addTimeCredit.created = function () {
-    this.now = new ReactiveVar(moment());
-    var self = this;
-    Meteor.setInterval(function() {
-        self.now.set(moment());
-    }, 60000);
-
     Session.set('moneyInserted', 0);
 };

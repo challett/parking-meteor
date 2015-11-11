@@ -33,19 +33,17 @@ Template.appLayout.helpers({
         return Session.equals('language', 'french')
     },
     currentTime: function () {
-        return Template.instance().now.get().format('h:mm a');
+        return moment(CurrentTime.get()).format('h:mm a');
     },
     timeDate: function () {
-        return moment().format('MMM Do YYYY')
+        return  moment(CurrentTime.get()).format('MMM Do YYYY')
     }
 });
 
 Template.appLayout.created = function () {
-    this.now = new ReactiveVar(moment());
-    var self = this;
-    Meteor.setInterval(function() {
-        self.now.set(moment());
-    }, 60000);
+    //Meteor.setInterval(function() {
+    //    Session.set('currentTime', moment());
+    //}, 6000);
 
     this.audio = new buzz.sound('beep.wav');
 };

@@ -2,12 +2,6 @@
  * Created by Connor on 11/3/2015.
  */
 Template.addTimeCoins.created = function () {
-    this.now = new ReactiveVar(moment());
-    var self = this;
-    Meteor.setInterval(function() {
-        self.now.set(moment());
-    }, 60000);
-
     Session.set('timeToAdd', 0);
 };
 
@@ -16,11 +10,11 @@ Template.addTimeCoins.helpers({
         return Session.get('moneyInserted').toFixed(2);
     },
     currentTime: function () {
-        return Template.instance().now.get().format('h:mm a');
+        return  moment(CurrentTime.get()).format('h:mm a');
     },
     endTime: function () {
         var moneyAdded = Session.get('moneyInserted');
-        return moment(Template.instance().now.get()).add(moneyAdded, 'hours').add(Session.get('voucherTimeAdded') || 0).format('h:mm a');
+        return moment(CurrentTime.get()).add(moneyAdded, 'hours').add(Session.get('voucherTimeAdded') || 0).format('h:mm a');
     },
     voucherValue: function () {
         return (Session.get('voucherTimeAdded') / 3600000) ? (Session.get('voucherTimeAdded') / 3600000).toFixed(2) : 0;
