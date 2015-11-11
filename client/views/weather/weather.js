@@ -2,8 +2,6 @@
  * Created by Connor on 11/10/2015.
  */
 Template.weather.rendered = function(){
-    this.weatherData = new ReactiveVar();
-    var self = this;
     var geooptions = {
         enableHighAccuracy: true,
         timeout: 60000,
@@ -24,7 +22,6 @@ Template.weather.rendered = function(){
         console.warn('ERROR(' + err.code + '): ' + err.message);
     }
     if (navigator.geolocation) {
-        console.log('weather data updated');
         navigator.geolocation.getCurrentPosition(success, error, geooptions);
         Meteor.setInterval(function () {
             console.log('weather data updated');

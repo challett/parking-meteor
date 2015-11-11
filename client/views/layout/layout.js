@@ -16,6 +16,9 @@ Template.appLayout.events({
     },
     'click .btn': function () {
         Template.instance().audio.play()
+    },
+    'click .btn-map': function () {
+        Router.go('map')
     }
 });
 
@@ -37,6 +40,9 @@ Template.appLayout.helpers({
     },
     timeDate: function () {
         return  moment(CurrentTime.get()).format('MMM Do YYYY')
+    },
+    showMapButton: function () {
+        return !(lodash.includes(['map'], Router.current().route.getName()))
     }
 });
 
@@ -45,5 +51,5 @@ Template.appLayout.created = function () {
     //    Session.set('currentTime', moment());
     //}, 6000);
 
-    this.audio = new buzz.sound('beep.wav');
+    this.audio = new Audio('beep.wav');
 };
