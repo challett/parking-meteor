@@ -7,7 +7,7 @@ Template.map.rendered = function () {
         timeout: 60000,
         maximumAge: 0
     };
-    var contentString = '<p style="color:#000">You are here</p>';
+    var contentString = '<div style="color:#000">You are here</div>';
 
     var infowindow = new google.maps.InfoWindow({
         content: contentString
@@ -31,6 +31,7 @@ Template.map.rendered = function () {
             });
             marker.addListener('click', function toggleBounce() {
                 infowindow.open(map, marker);
+
             });
             trafficLayer.setMap(map);
             marker.setMap(map);
