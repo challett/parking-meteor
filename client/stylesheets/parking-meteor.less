@@ -17,13 +17,15 @@
 /*GENERAL ELEMENTS*/
 body {
   background-color: @bkgcolour;
+  padding: 0;
+  margin: 0 0;
 }
 
 
 /*MAIN VIEW*/
 .mainSpace {
   background-color: white;
-  height: 650px;
+  height: 850px;
   width: 100%;
   position: relative;
   -webkit-border-radius: 2px;
@@ -55,7 +57,7 @@ body {
   width: 0;
   height: 0;
   position: relative;
-  top: 575px;
+  top: 775px;
   border-left: 25px solid transparent;
   border-right: 25px solid transparent;
   border-top: 25px solid @primcolour;
@@ -110,6 +112,47 @@ body {
   position: absolute;
   bottom: 12px;
   right: 25px;
+}
+.weatherContainer {
+  height: 100px;
+  width: 100%;
+  background-color: @offwhite;
+  position: absolute;
+  top: 630px;
+}
+.weatherTime {
+  width: 25%;
+  height: auto;
+  font-size: 1.3em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: @offwhite;
+  text-align: center;
+  background-color: @seccolour;
+  position: relative;
+  float: left;
+}
+.weatherIcon {
+  width: 100%;
+  height: auto;
+  background-color: @offwhite;
+  font-size: 0.7em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: @darkgrey;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.weatherTemp {
+  width: 100%;
+  height: auto;
+  background-color: @primcolour;
+  font-size: 1.5em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: @offwhite;
+  text-align: center;
 }
 
 

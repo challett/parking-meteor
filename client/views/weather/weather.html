@@ -1,8 +1,20 @@
 <template name="weather">
+
     {{#each forecast}}
-        {{FCTTIME.civil}}
-        <img src="{{icon_url}}">
-        {{temp.metric}}°C
-        {{condition}}
+        <div class="weatherTime">
+            {{FCTTIME.civil}}
+
+            <div class="weatherIcon">
+                <img src="{{icon_url}}"> <br>
+                {{condition}}
+            </div>
+
+            <div class="weatherTemp">
+                {{temp.metric}}°C
+            </div>
+
+        </div>
+
     {{/each}}
+
 </template>
