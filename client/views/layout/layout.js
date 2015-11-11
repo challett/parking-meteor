@@ -13,6 +13,9 @@ Template.appLayout.events({
     },
     'click .english-button': function () {
         Session.set('language','english')
+    },
+    'click .btn': function () {
+        audio.play()
     }
 });
 
