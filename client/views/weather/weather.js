@@ -4,7 +4,7 @@
 Template.weather.rendered = function(){
     var geooptions = {
         enableHighAccuracy: true,
-        timeout: 60000,
+        timeout: 600000,
         maximumAge: 0
     };
 
