@@ -19,6 +19,9 @@ Template.appLayout.events({
     },
     'click .btn-map': function () {
         Router.go('map')
+    },
+    'click .number': function () {
+        Template.instance().audio.play()
     }
 });
 
