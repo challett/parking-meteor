@@ -15,7 +15,7 @@ Template.appLayout.events({
         Session.set('language','english')
     },
     'click .btn': function () {
-        audio.play()
+        Template.instance().audio.play()
     }
 });
 
@@ -46,4 +46,6 @@ Template.appLayout.created = function () {
     Meteor.setInterval(function() {
         self.now.set(moment());
     }, 60000);
+
+    this.audio = new buzz.sound('beep.wav');
 };
