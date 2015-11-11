@@ -13,7 +13,7 @@ Template.addTimeCredit.helpers({
         return moment(Template.instance().now.get()).add(moneyAdded, 'hours').add(Session.get('voucherTimeAdded') || 0).format('h:mm a')
     },
     voucherValue: function () {
-        return (Session.get('voucherTimeAdded') / 3600000).toFixed(2);
+        return (Session.get('voucherTimeAdded') / 3600000) ? (Session.get('voucherTimeAdded') / 3600000).toFixed(2) : 0;
     }
 });
 
