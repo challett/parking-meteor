@@ -49,6 +49,12 @@
                                     {{#with currentTicket}}
                                         {{> ticket}}
                                     {{/with}}
+                                {{else}}
+                                    {{#if currentVoucher}}
+                                        {{#with currentVoucher}}
+                                            {{> voucher}}
+                                        {{/with}}
+                                    {{/if}}
                                 {{/if}}
                             </div>
 
