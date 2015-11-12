@@ -5,6 +5,15 @@
                 <div class="grid__col grid__col--2-of-12">
                     <div class="qrScan">
                         <i class="fa fa-qrcode"></i>
+                        <div class="qrScanOptions">
+                            <div class="arrow-down-qr"></div>
+                            <form class="redeem-ticket">
+                                <input class="scanTicket" type="text" name="text" placeholder="Scan Ticket" />
+                            </form>
+                            <form class="claim-voucher">
+                                <input class="scanTicket" type="text" name="text" placeholder="Scan Voucher" />
+                            </form>
+                        </div>
                     </div>
                 </div>
 
@@ -66,10 +75,5 @@
 
     </div>
 
-    <form class="redeem-ticket">
-        <input type="text" name="text" placeholder="Enter ticket ID to simulate scanning a ticket" />
-    </form>
-    <form class="claim-voucher">
-    <input type="text" name="text" placeholder="Enter voucher ID to simulate inserting" />
-</form>
+
 </template>
