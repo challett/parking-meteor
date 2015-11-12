@@ -4,29 +4,36 @@
         <div class="progBarPoint" style="left: 66%;"></div>
     </div>
     <h1 class="instructions">
-        {{#if isFrench}}Ajouter ou supprimer des temps (0.50 $ par demi-heure){{else}}Add or remove time ($0.50 per half hour){{/if}}
+        {{#if isFrench}}Ajouter ou supprimer du temps{{else}}Add or remove time for parking{{/if}}
     </h1>
+    <div class="grid__col grid__clo--1-of-3">
+        <div class="rate">{{#if isFrench}}0.50$ par heure{{else}}$0.50 per hour{{/if}}</div>
+    </div>
     <br>
+
     <div>
-        <div class="grid__col grid__col--4-of-12 payContainer">
+        <div class="payContainer">
+            <button class="btn btn-default btn-add-time">+0.5 hr</button> <br>
+            <button class="btn btn-default btn-remove-time" disabled={{noMoneyInserted}}>-0.5 hr</button> <br>
+
+        </div>
+
+
+        <div class="payContainerControl">
             {{#if isFrench}}Temps ajoute: {{timeAdded}}{{else}}Time added: {{timeAdded}} hr{{/if}} <br>
             {{#if voucherValue}}
                 Voucher Credit: {{voucherValue}} hr<br>
             {{/if}}
             {{#if isFrench}}Debut a: {{currentTime}}{{else}}Start time: {{currentTime}}{{/if}} <br>
             {{#if isFrench}}Expire a: {{endTime}}{{else}}Expires at: {{endTime}}{{/if}} <br>
-        </div>
 
-
-        <div class="grid__col grid__col--4-of-12 payContainerControl">
-            <button class="btn btn-default btn-add-time">+0.5 hr</button> <br>
-            <button class="btn btn-default btn-remove-time" disabled={{noMoneyInserted}}>-0.5 hr</button> <br>
-        </div>
-        <div class="grid__col grid__col--4-of-12 payContainerControl">
-            <button class="btn btn-default btn-print" disabled={{noMoneyInserted}}>
-                {{#if isFrench}}Billet imprime{{else}}Print ticket{{/if}}
-            </button>
         </div>
     </div>
+    <button class="btn btn-default btn-print" disabled={{noMoneyInserted}}>
+        {{#if isFrench}}Billet imprime{{else}}Print ticket{{/if}}
+    </button>
+
+
+
 
 </template>
