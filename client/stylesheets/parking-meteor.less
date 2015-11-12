@@ -12,6 +12,8 @@
 @bluelight: #34cbcb;
 @bluedark: #258f8f;
 @darkgrey: #707070;
+@orglight: #e2941d;
+@orgdark: #9d6714;
 
 
 /*GENERAL ELEMENTS*/
@@ -380,6 +382,11 @@ body {
 }
 .pin-error {
   background: red;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 0.8em;
+  margin-top: 10px;
 }
 .pin-input {
   background-color: @tertcolour;
@@ -408,7 +415,7 @@ body {
   padding: 10px;
   margin-top: 10px;
   margin-right: 0px;
-  width: 30%;
+  width: 40%;
 }
 .correction:hover {
   background-color: #8E2626;
@@ -421,7 +428,7 @@ body {
   padding: 10px;
   margin-top: 10px;
   margin-right: 0px;
-  width: 30%;
+  width: 40%;
 }
 .submit:hover {
   background-color: #227979;
@@ -460,21 +467,42 @@ body {
 .steps {
   width: 100%;
   height: 80px;
-  border-top-right-radius: 2px;
-  border-top-left-radius: 2px;
   top: 40px;
-  left: 0;
   position: relative;
 }
 .step {
-  height: 80px;
+  height: auto;
   width: 20%;
-  background-color: @offwhite;
-  margin-right: 5px;
-  margin-left: 5px;
+  background-color: @seccolour;
   color: @primcolour;
   font-size: 0.7em;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  padding: 0;
+  margin: 40px 20px;
 }
+.step-text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: @seccolour;
+  font-size: 1.2em;
+  background-color: @primcolour;
+  border-width: 2px;
+  border-style: solid;
+  border-color: @seccolour;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+.step-desc {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: @primcolour;
+  font-size: 1.1em;
+  font-style: italic;
+}
+
+
 
 /*BUTTONS*/
 .btn {
@@ -510,9 +538,29 @@ body {
   background-color: @redlight;
   border-bottom-color: @reddark;
 }
+.btn-back-container:hover {
+  background-color: @reddark !important;
+  border-bottom-color: @redlight !important;
+}
 .btn-done-container {
   bottom: 0;
   position: relative;
+  background-color: @orglight;
+  border-bottom-color: @orgdark;
+}
+.btn-done-container:hover {
+  background-color: @orgdark !important;
+  border-bottom-color: @orglight !important;
+}
+.btn-print {
+  bottom: 0;
+  position: relative;
+  background-color: @orglight;
+  border-bottom-color: @orgdark;
+}
+.btn-print:hover {
+  background-color: @orgdark !important;
+  border-bottom-color: @orglight !important;
 }
 .btn-print {
   height: 200px !important;
@@ -524,6 +572,10 @@ body {
   left: 160px;
   background-color: @bluelight;
   border-bottom-color: @bluedark;
+}
+.btn-map-container:hover {
+  background-color: @bluedark !important;
+  border-bottom-color: @bluelight !important;
 }
 .btn-add-time {
   width: 150px !important;

@@ -1,34 +1,44 @@
 <template name="claimTicket">
+    <h1 class="instructions">
+        {{#if isFrench}}
+            Imprimez un bon pour reclamer le temps restant.
+        {{else}}Please print voucher to claim remaining time.
+        {{/if}}
+    </h1>
     <br>
-    {{#if isFrench}}
-        Pour reclamer le temps restant sur le billet, imprimer un bon de reduction
-    {{else}}To claim the remaining time on ticket, please print a voucher
-    {{/if}}
-    <br><br>
-    <div class="payContainer">
-        <div class="grid__col grid__col--3-of-5">
-            <br>
-        {{#if ticket.claimed}}
-            {{#if isFrench}}Ce bon a deja ete revendiquee
-            {{else}}This voucher has already been claimed{{/if}}
-        {{else}}
-            {{#if hasTimeRemaining}}
-                {{#if isFrench}}Ce bon a:<br>{{excessTime}}<br>de la fin sur elle
-                {{else}}This voucher has:<br>{{excessTime}}<br>remaining on it
+
+
+    <div class="grid__col grid__col--2-of-3">
+        <div class="addTimeContainer">
+            <div class="payContainer" style="font-size: 100px; margin: auto auto; display: flex; justify-content: center; align-items: center; color: #31C057; width: 200px;">
+                <i class="fa fa-clock-o"></i>
+            </div>
+
+
+            <div class="payContainerControl">
+                {{#if ticket.claimed}}
+                    {{#if isFrench}}Ce bon a deja ete revendiquee.
+                    {{else}}This voucher has already been claimed.{{/if}}
+                {{else}}
+                    {{#if hasTimeRemaining}}
+                        {{#if isFrench}}Ce bon a <div style="font-weight: 700">{{excessTime}}</div> temps restant
+                        {{else}}This voucher has <div style="font-weight: 700">{{excessTime}}</div> remaining on it
+                        {{/if}}
+                    {{else}}
+                        {{#if isFrench}}Il n'y a pas de temps restant sur ce billet.
+                        {{else}}There is no time remaining on this ticket.
+                        {{/if}}
+                    {{/if}}
                 {{/if}}
-            {{else}}
-                {{#if isFrench}}Il n'y a pas le temps restant sur ??ce billet
-                {{else}}There is no time remaining on this ticket
-                {{/if}}
-            {{/if}}
-        {{/if}}
+            </div>
         </div>
-        <div class="grid__col grid__col--2-of-5 payContainerControl" style="height: 100%">
+    </div>
+
+    <div class="grid__col grid__col--3-of3">
         {{#if hasTimeRemaining}}
-            <button class="btn btn-default btn-print payContainerControl btn-got-it" style="margin-top: 25px">{{#if isFrench}}Imprimer Voucher{{else}}Print Voucher{{/if}}</button>
+            <button class="btn btn-default btn-print payContainerControl btn-got-it" style="margin-top: 40px">{{#if isFrench}}Imprimer Bon{{else}}Print Voucher{{/if}}</button>
         {{else}}
-            <button class="btn btn-default btn-print payContainerControl btn-back" style="margin-top: 25px">{{#if isFrench}}Precedent{{else}}Back{{/if}}</button>
+            <button class="btn btn-default btn-print payContainerControl btn-back" style="margin-top: 40px; text-align: center; background-color: #cb3434; border-bottom-color: #832222;">{{#if isFrench}}Precedent{{else}}Back{{/if}}</button>
         {{/if}}
-        </div>
     </div>
 </template>

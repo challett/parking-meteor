@@ -9,11 +9,11 @@ Template.addTimeCoins.helpers({
         return Session.get('moneyInserted').toFixed(2);
     },
     currentTime: function () {
-        return  moment(CurrentTime.get()).format('h:mm a');
+        return  moment(CurrentTime.get()).format('h:mm A');
     },
     endTime: function () {
         var moneyAdded = Session.get('moneyInserted');
-        return moment(CurrentTime.get()).add(moneyAdded, 'hours').add(Session.get('voucherTimeAdded') || 0).format('h:mm a');
+        return moment(CurrentTime.get()).add(moneyAdded, 'hours').add(Session.get('voucherTimeAdded') || 0).format('h:mm A');
     },
     voucherValue: function () {
         var x = Session.get('voucherTimeAdded');

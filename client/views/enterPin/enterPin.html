@@ -12,7 +12,7 @@
                 {{#if asterisks}}
                     {{asterisks}}
                 {{else}}
-                    {{#if isFrench}}Inserez votre NIP{{else}}Enter your pin{{/if}}
+                    {{#if isFrench}}Inserez votre NIP{{else}}Enter your PIN{{/if}}
                 {{/if}}
             </div>
 
@@ -25,17 +25,18 @@
             </div>
             <div class="grid__col grid__col--1-of-3 correction">&lt;</div>
             <div class="grid__col grid__col--2-of-3 submit">{{#if isFrench}}Proposer{{else}}Submit{{/if}}</div>
-            {{#if pinError}}
-                <div class="grid__col grid__col--4-of-5 grid__col--centered pin-error">
-                    {{#if pinError}}
-                        {{#if isFrench}}
-                            Votre code NIP est incorrect, essayer a nouveau
-                        {{else}}Your PIN is incorrect, please try again
-                        {{/if}}
-                    {{/if}}
-                </div>
-            {{/if}}
+
     </div>
+    {{#if pinError}}
+        <div class="grid__col grid__col--4-of-5 grid__col--centered pin-error">
+            {{#if pinError}}
+                {{#if isFrench}}
+                    Votre code NIP est incorrect, essayez de nouveau.
+                {{else}}Your PIN is incorrect, please try again.
+                {{/if}}
+            {{/if}}
+        </div>
+    {{/if}}
 
 
 </template>

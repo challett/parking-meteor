@@ -1,8 +1,8 @@
 <template name="voucher">
     <div class="ticket">
         <div class="ticketText">
-            <h3>VOUCHER</h3>
-            {{#if isFrench}}Temps Restant{{else}}Time Remaining{{/if}} {{time}} <br><br>
+            <h3>{{#if isFrench}}BON{{else}}VOUCHER{{/if}}</h3>
+            {{#if isFrench}}TEMPS RESTANT{{else}}REMAINING TIME{{/if}} <br> {{time}} <br><br>
             <div class="qr-code-container">
                 <div class='qrcode' id="qrCode"></div>
             </div>

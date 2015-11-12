@@ -2,16 +2,15 @@
     <div class="progBarEmpty">
         <div class="progBar" style="width: 100%; border-top-right-radius: 2px;"></div>
     </div>
-    <h1 class="instructions">
-        {{#if isFrench}}S'il-vous-plait prennez votre billet{{else}}Please collect your ticket{{/if}}
+    <h1 class="instructions" style="top: 30px; position: relative;">
+        {{#if isFrench}}S'il-vous-plait placez votre billet sur la parbrise.{{else}}Please collect your ticket and place on dash.{{/if}}
     </h1>
-    <div class="payContainer">
-        <div class="grid__col grid__col--3-of-12"></div>
-        <div class="grid__col grid__col--6-of-12 payContainerControl">
-            <button class="btn btn-default btn-done-container btn-print btn-done" style="margin-top: 25px;">
+
+        <div class="grid__col grid__col--6-of-12 grid__col--centered payContainerControl">
+            <button class="btn btn-default btn-done-container btn-print btn-done" style="top: 80px; position:relative;">
                 {{#if isFrench}}Termine{{else}}Done{{/if}}
             </button>
         </div>
-        <div class="grid__col grid__col--3-of-12"></div>
-    </div>
+
+
 </template>

@@ -3,23 +3,36 @@
             <div class="progBar" style="width: 66%;"></div>
             <div class="progBarPoint" style="left: 66%;"></div>
         </div>
-        <h1 class="instructions">
-            {{#if isFrench}}Inserer des pieces pour ajouter du temps{{else}}Insert coins to add time{{/if}}
-        </h1>
-        <br>
-    <div>
-        <div class="grid__col grid__col--6-of-12 payContainer">
-            {{#if isFrench}}L'argent insere: {{timeAdded}} ${{else}}Money inserted: ${{timeAdded}}{{/if}} <br>
-            {{#if voucherValue}}
-                Voucher Credit: {{voucherValue}}<br>
-            {{/if}}
-            {{#if isFrench}}Debut a: {{currentTime}}{{else}}Start time: {{currentTime}}{{/if}} <br>
-            {{#if isFrench}}Expire a: {{endTime}}{{else}}Expires at: {{endTime}}{{/if}} <br>
+    <h1 class="instructions">
+        {{#if isFrench}}Inserer des pieces pour ajouter du temps.{{else}}Insert coins to add time.{{/if}}
+    </h1>
+    <div class="grid__col grid__col--1-of-3">
+        <div class="rate">{{#if isFrench}}0.50$ par heure{{else}}$0.50 per hour{{/if}}</div>
+    </div>
+    <br>
+
+
+    <div class="grid__col grid__col--2-of-3">
+        <div class="addTimeContainer">
+            <div class="payContainer" style="font-size: 100px; margin: auto auto; display: flex; justify-content: center; align-items: center; color: #31C057; width: 200px;">
+                $
+            </div>
+
+
+            <div class="payContainerControl">
+                {{#if isFrench}}<div style="font-weight: 700">{{timeAdded}}$ insere </div>{{else}} <div style="font-weight: 700">${{timeAdded}} inserted </div>{{/if}}
+                {{#if voucherValue}}
+                    Credit {{voucherValue}}<br>
+                {{/if}}
+                {{#if isFrench}}Debut {{currentTime}}{{else}}Start time {{currentTime}}{{/if}} <br>
+                {{#if isFrench}}Expire {{endTime}}{{else}}Expires {{endTime}}{{/if}} <br>
+            </div>
         </div>
-        <div class="grid__col grid__col--6-of-12 payContainerControl">
-            <button class="btn btn-default btn-print">
-                {{#if isFrench}}Billet imprime{{else}}Print ticket{{/if}}
-            </button>
-        </div>
+    </div>
+
+    <div class="grid__col grid__col--3-of3">
+        <button class="btn btn-default btn-print" style="margin-top: 40px;">
+            {{#if isFrench}}Imprime Billet{{else}}Print Ticket{{/if}}
+        </button>
     </div>
 </template>
