@@ -20,7 +20,7 @@ Template.addTimeCredit.helpers({
         var d = moment.duration(x, 'milliseconds');
         var hours = Math.floor(d.asHours());
         var mins = Math.floor(d.asMinutes()) - hours * 60;
-        return hours + ' hours and ' + mins + ' minutes'
+        return Session.get('voucherTimeAdded') ? hours + 'h  ' + mins + ' m' : false
     }
 });
 
@@ -40,6 +40,7 @@ Template.addTimeCredit.events({
                 expirationTime: moment(CurrentTime.get()).add(moneyAdded, 'hours').add(Session.get('voucherTimeAdded')).toDate()
             }));
             Session.set('voucherTimeAdded', 0);
+            var s = new Audio('print.wav').play();
             Router.go('printTicket')
         }
     }

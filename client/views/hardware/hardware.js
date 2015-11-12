@@ -52,7 +52,7 @@ Template.hardware.helpers({
         return Vouchers.findOne(Session.get('lastVoucherId'));
     },
     coinsDisabled: function () {
-        return (lodash.includes(['enterPin','addTimeCredit','print'], Router.current().route.getName()))
+        return (lodash.includes(['enterPin','addTimeCredit','printTicket'], Router.current().route.getName()))
     },
     plasticDisabled: function () {
         return !(lodash.includes(['map', 'start', 'claimTicket'], Router.current().route.getName()))
