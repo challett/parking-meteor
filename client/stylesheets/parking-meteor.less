@@ -204,9 +204,8 @@ body {
 .qrScan {
   height: 120px;
   width: 200px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
   -webkit-box-shadow: 0px 1px 1px 0px @shdwcolour;
   -moz-box-shadow: 0px 1px 1px 0px @shdwcolour;
   box-shadow: 0px 1px 1px 0px @shdwcolour;
@@ -221,6 +220,41 @@ body {
   margin-left: 20px;
   padding-top: 30px;
   float: right;
+}
+.qrScanOptions {
+  height: 220px;
+  width: 100%;
+  background-color: @offwhite;
+  position: absolute;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  -webkit-box-shadow: 0px 1px 1px 0px @shdwcolour;
+  -moz-box-shadow: 0px 1px 1px 0px @shdwcolour;
+  box-shadow: 0px 1px 1px 0px @shdwcolour;
+  top: 150px;
+}
+.arrow-down-qr {
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+  border-top: 18px solid @primcolour;
+  margin-left: auto;
+  margin-right: auto;
+  top: 0;
+  left: 18px;
+}
+.scanTicket {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 2px solid @primcolour;
+  width: 90%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 0.2em;
+  text-align: center;
 }
 .ticketPrint {
   height: 120px;
