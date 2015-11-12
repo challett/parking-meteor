@@ -5,9 +5,6 @@ Template.footer.helpers({
     showBackButton: function () {
         return !(lodash.includes(['start', 'printTicket'], Router.current().route.getName()))
     },
-    showDoneButton: function () {
-        return (lodash.includes(['printTicket'], Router.current().route.getName()))
-    },
     showFrenchButton: function () {
         return Session.equals('language', 'english')
     },
