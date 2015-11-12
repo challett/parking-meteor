@@ -8,16 +8,16 @@
     </h1>
     <br>
     <div class="grid__col grid__col--6-of-12">
-        {{#if isFrench}}Temps ajoute: {{timeAdded}}{{else}}Time added: {{timeAdded}}{{/if}} <br>
+        {{#if isFrench}}Temps ajoute: {{timeAdded}}{{else}}Time added: {{timeAdded}} hr{{/if}} <br>
         {{#if voucherValue}}
-            Voucher Credit: {{voucherValue}}<br>
+            Voucher Credit: {{voucherValue}} hr<br>
         {{/if}}
         {{#if isFrench}}Debut a: {{currentTime}}{{else}}Start time: {{currentTime}}{{/if}} <br>
         {{#if isFrench}}Expire a: {{endTime}}{{else}}Expires at: {{endTime}}{{/if}} <br>
     </div>
     <div class="grid__col grid__col--3-of-12">
-        <button class="btn btn-default btn-add-time">+0.5 {{#if isFrench}}heure{{else}}hours{{/if}}</button> <br>
-        <button class="btn btn-default btn-remove-time">-0.5 {{#if isFrench}}heure{{else}}hours{{/if}}</button> <br>
+        <button class="btn btn-default btn-add-time">+0.5 hr</button> <br>
+        <button class="btn btn-default btn-remove-time">-0.5 hr</button> <br>
     </div>
     <div class="grid__col grid__col--3-of-12">
         <button class="btn btn-default btn-print" disabled={{noMoneyInserted}}>

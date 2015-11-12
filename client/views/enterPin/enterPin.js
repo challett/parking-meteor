@@ -16,11 +16,6 @@ Template.enterPin.helpers({
             astString += '*'
         });
         return astString;
-    },
-    emptyPin: function () {
-        if (Session.get('enteredPin').length=== 0 ){
-            return true
-        }
     }
 });
 
@@ -35,14 +30,13 @@ Template.enterPin.events({
             Router.go('addTimeCredit', {}, {replaceState: true});
         } else {
             Session.set('enteredPin', '');
-            Session.set('pinError', 'Your pin is incorrect, please try again')
+            Session.set('pinError', 'error')
         }
     },
     'click .correction': function () {
         var enteredPin = Session.get('enteredPin');
         Session.set('enteredPin', enteredPin.substring(0, enteredPin.length - 1))
     }
-
 });
 
 Template.enterPin.created = function () {
