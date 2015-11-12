@@ -16,7 +16,11 @@ Template.addTimeCoins.helpers({
         return moment(CurrentTime.get()).add(moneyAdded, 'hours').add(Session.get('voucherTimeAdded') || 0).format('h:mm a');
     },
     voucherValue: function () {
-        return (Session.get('voucherTimeAdded') / 3600000) ? (Session.get('voucherTimeAdded') / 3600000).toFixed(2) : 0;
+        var x = Session.get('voucherTimeAdded');
+        var d = moment.duration(x, 'milliseconds');
+        var hours = Math.floor(d.asHours());
+        var mins = Math.floor(d.asMinutes()) - hours * 60;
+        return hours + ' hours and ' + mins + ' minutes'
     }
 });
 
@@ -25,8 +29,10 @@ Template.addTimeCoins.events({
         var moneyAdded = Session.get('moneyInserted');
         if (moneyAdded !== 0) {
             Session.set('lastTicketId',  Tickets.insert({
-                expirationTime: moment().add(moneyAdded, 'hours').toDate()
+                expirationTime: moment(CurrentTime.get()).add(moneyAdded, 'hours').add(Session.get('voucherTimeAdded')).toDate()
             }));
+            Session.set('voucherTimeAdded', 0);
+            var s = new Audio('print.wav').play();
             Router.go('printTicket')
         }
     },

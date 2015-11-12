@@ -1,9 +1,8 @@
-<template name="ticket" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<template name="voucher">
     <div class="ticket">
         <div class="ticketText">
-            <h3>TICKET</h3>
-            {{#if isFrench}}DEBUT A{{else}}START TIME{{/if}} {{printedTime}} <br><br>
-            {{#if isFrench}}EXPIRE A{{else}}EXPIRES AT{{/if}} {{endTime}} <br><br>
+            <h3>VOUCHER</h3>
+            {{#if isFrench}}Temps Restant{{else}}Time Remaining{{/if}} {{time}} <br><br>
             <div class="qr-code-container">
                 <div class='qrcode' id="qrCode"></div>
             </div>

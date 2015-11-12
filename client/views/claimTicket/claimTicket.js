@@ -13,7 +13,9 @@ Template.claimTicket.helpers({
 Template.claimTicket.events({
     'click .btn-got-it': function () {
         Tickets.update({_id: this.ticket._id},{$set: {claimed: true}});
-        Vouchers.insert({timeAvailable: moment(this.ticket.expirationTime).diff(moment())});
+        Session.set('lastVoucherId',Vouchers.insert({timeAvailable: moment(this.ticket.expirationTime).diff(moment())}));
+        Session.set('lastTicketId', '');
+        var s = new Audio('print.wav').play();
         Router.go('start')
     }
 });

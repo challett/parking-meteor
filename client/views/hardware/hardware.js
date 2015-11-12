@@ -48,6 +48,9 @@ Template.hardware.helpers({
     currentTicket: function () {
         return Tickets.findOne(Session.get('lastTicketId'));
     },
+    currentVoucher: function () {
+        return Vouchers.findOne(Session.get('lastVoucherId'));
+    },
     coinsDisabled: function () {
         return (lodash.includes(['enterPin','addTimeCredit','print'], Router.current().route.getName()))
     },
