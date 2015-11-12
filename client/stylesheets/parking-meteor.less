@@ -154,6 +154,62 @@ body {
   color: @offwhite;
   text-align: center;
 }
+.rate {
+  height: auto;
+  width: auto;
+  background-color: @seccolour;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 1em;
+  color: @primcolour;
+  position: relative;
+  padding: 10px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+  top: -20px;
+}
+.instructions {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 1.5em;
+  color: @offwhite;
+}
+.addTime {
+  height: 150px;
+  width: 100%;
+  background-color: @offwhite;
+  position: relative;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-shadow: 0px 1px 1px 0px @shdwcolour;
+  -moz-box-shadow: 0px 1px 1px 0px @shdwcolour;
+  box-shadow: 0px 1px 1px 0px @shdwcolour;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.addTimeOptions {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 150px;
+  height: auto;
+  padding-top: 30px;
+  position: absolute;
+  background-color: @seccolour;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  color: @primcolour;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 4.5em;
+}
+
 
 
 /*HARDWARE VIEW*/
@@ -371,12 +427,23 @@ body {
   background-color: #227979;
 }
 .payContainer {
-  height: 250px;
+  height: 150px;
   background: @seccolour;
+  display: table-cell;
+  vertical-align: middle;
+  width: 300px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
 }
 .payContainerControl {
   background: white;
   height: 250px;
+  width: 300px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: black;
+  font-size: 1em;
 }
 .steps {
   width: 100%;
@@ -447,12 +514,23 @@ body {
   border-bottom-color: @bluedark;
 }
 .btn-add-time {
-  width: 200px !important;
-  height: 100px !important;
+  width: 150px !important;
+  height: 60px !important;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: @offwhite;
+  font-size: 1em;
+  padding: 10px;
+
 }
 .btn-remove-time {
-  width: 200px !important;
-  height: 100px !important;
+  width: 150px !important;
+  height: 60px !important;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: @offwhite;
+  font-size: 1em;
+  padding: 10px;
 }
 .btn:hover {
   background: @seccolour;
