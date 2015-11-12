@@ -3,10 +3,14 @@
  */
 Template.claimTicket.helpers({
     excessTime: function () {
-        return moment(this.ticket.expirationTime).toNow(true)
+        var x =  moment(this.ticket.expirationTime).diff(moment(CurrentTime.get()));
+        var d = moment.duration(x, 'milliseconds');
+        var hours = Math.floor(d.asHours());
+        var mins = Math.floor(d.asMinutes()) - hours * 60;
+        return  hours + 'h ' + mins + 'm'
     },
     hasTimeRemaining: function () {
-        return moment(this.ticket.expirationTime).diff(moment(CurrentTime.get())) > 100
+        return moment(this.ticket.expirationTime).diff(moment(CurrentTime.get())) > 60000
     }
 });
 

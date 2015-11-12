@@ -11,5 +11,9 @@
     {{/if}}
     <br>
     Have a nice day!
-    <button class="btn btn-default btn-got-it">Print Voucher</button>
+    {{#if hasTimeRemaining}}
+        <button class="btn btn-default btn-got-it">Print Voucher</button>
+    {{else}}
+        <button class="btn btn-default btn-back">Back</button>
+    {{/if}}
 </template>

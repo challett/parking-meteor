@@ -20,7 +20,7 @@ Template.addTimeCredit.helpers({
         var d = moment.duration(x, 'milliseconds');
         var hours = Math.floor(d.asHours());
         var mins = Math.floor(d.asMinutes()) - hours * 60;
-        return Session.get('voucherTimeAdded') ? hours + 'h  ' + mins + ' m' : false
+        return Session.get('voucherTimeAdded') ? hours + 'h  ' + mins + 'm' : false
     }
 });
 

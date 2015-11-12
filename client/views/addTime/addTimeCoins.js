@@ -20,7 +20,7 @@ Template.addTimeCoins.helpers({
         var d = moment.duration(x, 'milliseconds');
         var hours = Math.floor(d.asHours());
         var mins = Math.floor(d.asMinutes()) - hours * 60;
-        return Session.get('voucherTimeAdded') ? hours + ' hours and ' + mins + ' minutes' : false
+        return Session.get('voucherTimeAdded') ? hours + 'h  ' + mins + 'm' : false
     }
 });
 
