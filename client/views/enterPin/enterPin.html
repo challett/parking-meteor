@@ -1,20 +1,41 @@
 <template name="enterPin">
-    <div class="pin-input">
-        {{#if emptyPin}}<br>
-        {{else}}
-            {{asterisks}}
-        {{/if}}
+
+    <div class="progBarEmpty">
+        <div class="progBar" style="width: 33%;"></div>
+        <div class="progBarPoint" style="left: 33%;"></div>
     </div>
-    {{#each numbers}}
-        <div class="grid__col grid__col--1-of-3 number" id="{{this}}">
-            {{this}}
-        </div>
-    {{/each}}
-    <div class="grid__col grid__col--1-of-3 correction">&lt;</div>
-    <div class="grid__col grid__col--2-of-3 submit">Submit</div>
+
+
+    <div class="grid__col grid__col-1-of-3" style="padding-left: 0;">
+
+            <div class="pin-input">
+                {{#if emptyPin}}<br>
+                {{else}}
+                    {{asterisks}}
+                {{/if}}
+            </div>
+
+            <div class="numbers">
+                {{#each numbers}}
+                    <div class="grid__col grid__col--1-of-3 number" id="{{this}}" style="padding: 10px;">
+                        {{this}}
+                    </div>
+                {{/each}}
+            </div>
+
+            <div class="grid__col grid__col--1-of-3 correction">&lt;</div>
+            <div class="grid__col grid__col--2-of-3 submit">Submit</div>
+    </div>
+
+
+
+
+
+
     {{#if pinError}}
     <div class="grid__col grid__col--4-of-5 grid__col--centered pin-error">
             {{pinError}}
     </div>
     {{/if}}
+
 </template>
