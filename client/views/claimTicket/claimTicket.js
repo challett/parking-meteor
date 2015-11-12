@@ -6,7 +6,7 @@ Template.claimTicket.helpers({
         return moment(this.ticket.expirationTime).toNow(true)
     },
     hasTimeRemaining: function () {
-        return moment(this.ticket.expirationTime).diff(CurrentTime.get()) > 100
+        return moment(this.ticket.expirationTime).diff(moment(CurrentTime.get())) > 100
     }
 });
 
