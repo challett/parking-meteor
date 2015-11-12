@@ -3,10 +3,10 @@
  */
 Template.ticket.helpers({
     printedTime: function () {
-        return moment(this.createdAt).format('MMMM Do YYYY h:mm a')
+        return moment(this.createdAt).format('MMM D YYYY h:mm A')
     },
     endTime: function () {
-        return moment(this.expirationTime).format('MMMM Do YYYY h:mm a')
+        return moment(this.expirationTime).format('MMM D YYYY h:mm A')
     }
 });
 

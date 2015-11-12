@@ -5,6 +5,15 @@
                 <div class="grid__col grid__col--2-of-12">
                     <div class="qrScan">
                         <i class="fa fa-qrcode"></i>
+                        <div class="qrScanOptions">
+                            <div class="arrow-down-qr"></div>
+                            <form class="redeem-ticket">
+                                <input class="scanTicket" type="text" name="text" placeholder="Scan Ticket / Scan Billet" />
+                            </form>
+                            <form class="claim-voucher">
+                                <input class="scanTicket" type="text" name="text" placeholder="Scan Voucher / Scan Bon" />
+                            </form>
+                        </div>
                     </div>
                 </div>
 
@@ -12,8 +21,8 @@
                     <div class="cardInsert">
                         <div class="grid__col grid__col--4-of-4" style="text-align: center; padding-left: 150px;">
                             {{#unless hidePlastic}}
-                                <button class="btn btn-default btn-credit" disabled={{plasticDisabled}}>Credit</button>
-                                <button class="btn btn-default btn-debit" disabled={{plasticDisabled}}>Debit</button>
+                                <button class="btn btn-default btn-plastic" disabled={{plasticDisabled}}>Credit</button>
+                                <button class="btn btn-default btn-plastic" disabled={{plasticDisabled}}>Debit</button>
                             {{/unless}}
                         </div>
                         <div class="cardOptions">
@@ -27,11 +36,11 @@
                 <div class="grid__col grid__col--5-of-12">
                     <div class="cardInsert">
                         <div class="grid__col grid__col--4-of-4" style="text-align: center; padding-left: 150px;">
-                            <button class="btn btn-default btn-toonie" disabled={{coinsDisabled}}>$2</button>
-                            <button class="btn btn-default btn-loonie" disabled={{coinsDisabled}}>$1</button>
-                            <button class="btn btn-default btn-quarter" disabled={{coinsDisabled}}>$0.25</button>
-                            <button class="btn btn-default btn-dime" disabled={{coinsDisabled}}>$0.10</button>
-                            <button class="btn btn-default btn-nickel" disabled={{coinsDisabled}}>$0.05</button>
+                            <button class="btn btn-default btn-coin" id=2 disabled={{coinsDisabled}}>$2</button>
+                            <button class="btn btn-default btn-coin" id=1 disabled={{coinsDisabled}}>$1</button>
+                            <button class="btn btn-default btn-coin" id=0.25 disabled={{coinsDisabled}}>$0.25</button>
+                            <button class="btn btn-default btn-coin" id=0.10 disabled={{coinsDisabled}}>$0.10</button>
+                            <button class="btn btn-default btn-coin" id=0.05 disabled={{coinsDisabled}}>$0.05</button>
                         </div>
                         <div class="cardOptions">
                             $
@@ -49,6 +58,12 @@
                                     {{#with currentTicket}}
                                         {{> ticket}}
                                     {{/with}}
+                                {{else}}
+                                    {{#if currentVoucher}}
+                                        {{#with currentVoucher}}
+                                            {{> voucher}}
+                                        {{/with}}
+                                    {{/if}}
                                 {{/if}}
                             </div>
 
@@ -60,10 +75,5 @@
 
     </div>
 
-    <form class="redeem-ticket">
-        <input type="text" name="text" placeholder="Enter ticket ID to simulate scanning a ticket" />
-    </form>
-    <form class="claim-voucher">
-    <input type="text" name="text" placeholder="Enter voucher ID to simulate inserting" />
-</form>
+
 </template>

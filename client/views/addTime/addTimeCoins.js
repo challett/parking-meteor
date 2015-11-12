@@ -2,13 +2,6 @@
  * Created by Connor on 11/3/2015.
  */
 Template.addTimeCoins.created = function () {
-    this.now = new ReactiveVar(moment());
-    var self = this;
-    Meteor.setInterval(function() {
-        self.now.set(moment());
-    }, 60000);
-
-    Session.set('timeToAdd', 0);
 };
 
 Template.addTimeCoins.helpers({
@@ -16,47 +9,32 @@ Template.addTimeCoins.helpers({
         return Session.get('moneyInserted').toFixed(2);
     },
     currentTime: function () {
-        return Template.instance().now.get().format('h:mm a');
+        return  moment(CurrentTime.get()).format('h:mm A');
     },
     endTime: function () {
         var moneyAdded = Session.get('moneyInserted');
-        return moment(Template.instance().now.get()).add(moneyAdded, 'hours').add(Session.get('voucherTimeAdded') || 0).format('h:mm a');
+        return moment(CurrentTime.get()).add(moneyAdded, 'hours').add(Session.get('voucherTimeAdded') || 0).format('h:mm A');
     },
     voucherValue: function () {
-        return (Session.get('voucherTimeAdded') / 3600000) ? (Session.get('voucherTimeAdded') / 3600000).toFixed(2) : 0;
+        var x = Session.get('voucherTimeAdded');
+        var d = moment.duration(x, 'milliseconds');
+        var hours = Math.floor(d.asHours());
+        var mins = Math.floor(d.asMinutes()) - hours * 60;
+        return Session.get('voucherTimeAdded') ? hours + 'h  ' + mins + 'm' : false
     }
 });
 
 Template.addTimeCoins.events({
-    'click .btn-add-time': function () {
-        //if (Session.get('timeToAdd'))
-        Session.set('timeToAdd', Session.get('timeToAdd') + 30)
-    },
-    'click .btn-remove-time': function () {
-        if (Session.get('timeToAdd') !== 0){
-            Session.set('timeToAdd', Session.get('timeToAdd') - 30)
-        }
-    },
     'click .btn-print': function () {
         var moneyAdded = Session.get('moneyInserted');
-        Session.set('lastTicketId',  Tickets.insert({
-            expirationTime: moment().add(moneyAdded, 'hours').toDate()
-        }));
-        Router.go('printTicket')
+        if (moneyAdded !== 0 || Session.get('voucherTimeAdded')) {
+            Session.set('lastTicketId',  Tickets.insert({
+                expirationTime: moment(CurrentTime.get()).add(moneyAdded, 'hours').add(Session.get('voucherTimeAdded')).toDate()
+            }));
+            Session.set('voucherTimeAdded', 0);
+            var s = new Audio('print.wav').play();
+            Router.go('printTicket')
+        }
     },
-    'click .btn-loonie': function () {
-        Session.set('moneyInserted', Session.get('moneyInserted') + 1);
-    },
-    'click .btn-toonie': function () {
-        Session.set('moneyInserted', Session.get('moneyInserted') + 2);
-    },
-    'click .btn-quarter': function () {
-        Session.set('moneyInserted', Session.get('moneyInserted') + 0.25);
-    },
-    'click .btn-dime': function () {
-        Session.set('moneyInserted', Session.get('moneyInserted') + 0.1);
-    },
-    'click .btn-nickel': function () {
-        Session.set('moneyInserted', Session.get('moneyInserted') + 0.05);
-    }
+
 });

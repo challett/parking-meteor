@@ -1,16 +1,44 @@
 <template name="claimTicket">
-    {{>hardware}}
-    Claiming time remaining on ticket: {{ticket._id}} <br>
-    {{#if ticket.claimed}}
-        This voucher has already been claimed
-    {{else}}
-        {{#if hasTimeRemaining}}
-            This voucher has {{excessTime}} remaining on it.
-        {{else}}
-            There is no time remaining on your ticket.
+    <h1 class="instructions">
+        {{#if isFrench}}
+            Imprimez un bon pour reclamer le temps restant.
+        {{else}}Please print voucher to claim remaining time.
         {{/if}}
-    {{/if}}
+    </h1>
     <br>
-    Have a nice day!
-    <button class="btn btn-default btn-got-it">Got It</button>
+
+
+    <div class="grid__col grid__col--2-of-3">
+        <div class="addTimeContainer">
+            <div class="payContainer" style="font-size: 100px; margin: auto auto; display: flex; justify-content: center; align-items: center; color: #31C057; width: 200px;">
+                <i class="fa fa-clock-o"></i>
+            </div>
+
+
+            <div class="payContainerControl">
+                {{#if ticket.claimed}}
+                    {{#if isFrench}}Ce bon a deja ete revendiquee.
+                    {{else}}This voucher has already been claimed.{{/if}}
+                {{else}}
+                    {{#if hasTimeRemaining}}
+                        {{#if isFrench}}Ce bon a <div style="font-weight: 700">{{excessTime}}</div> temps restant
+                        {{else}}This voucher has <div style="font-weight: 700">{{excessTime}}</div> remaining on it
+                        {{/if}}
+                    {{else}}
+                        {{#if isFrench}}Il n'y a pas de temps restant sur ce billet.
+                        {{else}}There is no time remaining on this ticket.
+                        {{/if}}
+                    {{/if}}
+                {{/if}}
+            </div>
+        </div>
+    </div>
+
+    <div class="grid__col grid__col--3-of3">
+        {{#if hasTimeRemaining}}
+            <button class="btn btn-default btn-print payContainerControl btn-got-it" style="margin-top: 40px">{{#if isFrench}}Imprimer Bon{{else}}Print Voucher{{/if}}</button>
+        {{else}}
+            <button class="btn btn-default btn-print payContainerControl btn-back" style="margin-top: 40px; text-align: center; background-color: #cb3434; border-bottom-color: #832222;">{{#if isFrench}}Precedent{{else}}Back{{/if}}</button>
+        {{/if}}
+    </div>
 </template>

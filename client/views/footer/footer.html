@@ -1,0 +1,26 @@
+<template name="footer">
+
+    {{#if showFrenchButton}}
+        <button class="btn btn-default btn-lang-container french-button">Francais</button>
+    {{/if}}
+    {{#if showEnglishButton}}
+        <button class="btn btn-default btn-lang-container english-button">English</button>
+    {{/if}}
+
+    {{#if showBackButton}}
+        <button class="btn btn-default btn-back-container btn-back">
+            {{#if isFrench}}Precedent{{else}}Back{{/if}}
+        </button>
+    {{/if}}
+
+    <div class="timeView">{{currentTime}}</div>
+    <div class="dateView">{{timeDate}}</div>
+
+    {{#if showMapButton}}
+        <button class="btn btn-default btn-map-container btn-map">{{#if isFrench}}Carte{{else}}Map{{/if}}</button>
+    {{/if}}
+
+    <div class="weatherContainer">
+        {{>weather}}
+    </div>
+</template>

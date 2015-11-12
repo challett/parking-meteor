@@ -2,11 +2,9 @@
  * Created by Connor on 11/10/2015.
  */
 Template.weather.rendered = function(){
-    this.weatherData = new ReactiveVar();
-    var self = this;
     var geooptions = {
         enableHighAccuracy: true,
-        timeout: 60000,
+        timeout: 180000,
         maximumAge: 0
     };
 
@@ -15,8 +13,7 @@ Template.weather.rendered = function(){
         var lng = pos.coords.longitude;
         Meteor.call('getWeatherData', lat, lng, function (err, res) {
             if(!err){
-                self.weatherData.set(res);
-                Session.set('weatherData', self.weatherData.get())
+                Session.set('weatherData', res)
             }
         });
     }
@@ -26,6 +23,11 @@ Template.weather.rendered = function(){
     }
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(success, error, geooptions);
+        Meteor.setInterval(function () {
+            console.log('weather data updated');
+            navigator.geolocation.getCurrentPosition(success, error, geooptions);
+        }, 600000); //Update weather every 10 min
+
     }
 };
 

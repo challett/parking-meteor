@@ -11,7 +11,7 @@ Template.enterPin.helpers({
         return Session.get('pinError')
     },
     asterisks: function () {
-        var astString = ' ';
+        var astString = '';
         lodash.times(Session.get('enteredPin').length, function(n) {
             astString += '*'
         });
@@ -27,16 +27,16 @@ Template.enterPin.events({
     },
     'click .submit': function () {
         if (Session.get('enteredPin') === '1234') {
-            Router.go('addTimeCredit');
+            Router.go('addTimeCredit', {}, {replaceState: true});
         } else {
-            Session.set('enteredPin', '')
-            Session.set('pinError', 'Your pin is incorrect, please try again')
+            Session.set('enteredPin', '');
+            Session.set('pinError', 'error')
         }
     },
     'click .correction': function () {
-        Session.set('enteredPin', lodash.dropRight(Session.get('enteredPin')))
+        var enteredPin = Session.get('enteredPin');
+        Session.set('enteredPin', enteredPin.substring(0, enteredPin.length - 1))
     }
-
 });
 
 Template.enterPin.created = function () {

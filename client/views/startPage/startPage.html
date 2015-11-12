@@ -1,36 +1,26 @@
-<head>
-    <!--FONTS-->
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Rokkitt:700' rel='stylesheet' type='text/css'>
-</head>
-
 <template name="start">
-    {{>hardware coinsDisabled=false}}
-
-    <div class="container">
-
-        <div class="grid">
-            <div class="grid__col grid__col--2-of-12"></div>
-
-            <div class="grid__col grid__col--8-of-12">
-                <div class="mainSpace">
-                    <div class="whiteSpace">
-                        <div class="progBarEmpty">
-                            <div class="progBar" style="width: 33%;"></div>
-                            <div class="progBarPoint" style="left: 33%;"></div>
-                        </div>
-                        <h1 class="instructions">
-                            {{#if isFrench}}Selectionnez la methode de paiement ou inserer des pieces pour commencer{{else}}Method of Payment <br> or Insert Coins to Begin{{/if}}
-                        </h1>
-                    </div>
-                    <div class="arrow-down"></div>
-                </div>
-            </div>
-
-            <div class="grid__col grid__col--2-of-12"></div>
-        </div>
-
+    <div class="progBarEmpty">
+        <div class="progBar" style="width: 33%;"></div>
+        <div class="progBarPoint" style="left: 33%;"></div>
     </div>
-
-
+    <div class="steps">
+        <div class="grid__col grid__col--1-of-3 step">
+            <div class="step-text">{{#if isFrench}}ETAPE 1{{else}}STEP 1{{/if}}</div>
+            <i class="fa fa-credit-card" style="font-size: 90px;"></i>
+            <div class="step-desc">{{#if isFrench}}Inserez Paie{{else}}Insert Payment{{/if}}</div>
+        </div>
+        <div class="grid__col grid__col--1-of-3 step">
+            <div class="step-text">{{#if isFrench}}ETAPE 2{{else}}STEP 2{{/if}}</div>
+            <i class="fa fa-clock-o" style="font-size: 90px;"></i>
+            <div class="step-desc">{{#if isFrench}}Ajoutez du Temps{{else}}Add Time{{/if}}</div>
+        </div>
+        <div class="grid__col grid__col--1-of-3 step">
+            <div class="step-text">{{#if isFrench}}ETAPE 3{{else}}STEP 3{{/if}}</div>
+            <i class="fa fa-ticket" style="font-size: 90px;"></i>
+            <div class="step-desc">{{#if isFrench}}Prennez le Billet{{else}}Take Ticket{{/if}}</div>
+        </div>
+    </div>
+    <h1 class="instructions" style="top: 200px; position: relative;">
+        {{#if isFrench}}Inserez carte de debit/credit ou pieces pour commencer.{{else}}Insert debit/credit card or insert coins to begin.{{/if}}
+    </h1>
 </template>
