@@ -27,7 +27,7 @@ Template.addTimeCoins.helpers({
 Template.addTimeCoins.events({
     'click .btn-print': function () {
         var moneyAdded = Session.get('moneyInserted');
-        if (moneyAdded !== 0) {
+        if (moneyAdded !== 0 || Session.get('voucherTimeAdded')) {
             Session.set('lastTicketId',  Tickets.insert({
                 expirationTime: moment(CurrentTime.get()).add(moneyAdded, 'hours').add(Session.get('voucherTimeAdded')).toDate()
             }));
