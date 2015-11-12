@@ -3,9 +3,15 @@
         <div class="progBar" style="width: 100%; border-top-right-radius: 2px;"></div>
     </div>
     <h1 class="instructions">
-        {{#if isFrench}}S'il-vous-plait prennez votre billet et passez une belle journee.{{else}}Please collect your ticket and have a nice day.{{/if}}
+        {{#if isFrench}}S'il-vous-plait prennez votre billet{{else}}Please collect your ticket{{/if}}
     </h1>
-    <button class="btn btn-default btn-done-container btn-print btn-done">
-        {{#if isFrench}}Termine{{else}}Done{{/if}}
-    </button>
+    <div class="payContainer">
+        <div class="grid__col grid__col--3-of-12"></div>
+        <div class="grid__col grid__col--6-of-12 payContainerControl">
+            <button class="btn btn-default btn-done-container btn-print btn-done" style="margin-top: 25px;">
+                {{#if isFrench}}Termine{{else}}Done{{/if}}
+            </button>
+        </div>
+        <div class="grid__col grid__col--3-of-12"></div>
+    </div>
 </template>

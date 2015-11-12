@@ -1,19 +1,34 @@
 <template name="claimTicket">
-    Claiming time remaining on ticket: {{ticket._id}} <br>
-    {{#if ticket.claimed}}
-        This voucher has already been claimed
-    {{else}}
-        {{#if hasTimeRemaining}}
-            This voucher has {{excessTime}} remaining on it.
-        {{else}}
-            There is no time remaining on your ticket.
-        {{/if}}
-    {{/if}}
     <br>
-    Have a nice day!
-    {{#if hasTimeRemaining}}
-        <button class="btn btn-default btn-got-it">Print Voucher</button>
-    {{else}}
-        <button class="btn btn-default btn-back">Back</button>
+    {{#if isFrench}}
+        Pour reclamer le temps restant sur le billet, imprimer un bon de reduction
+    {{else}}To claim the remaining time on ticket, please print a voucher
     {{/if}}
+    <br><br>
+    <div class="payContainer">
+        <div class="grid__col grid__col--3-of-5">
+            <br>
+        {{#if ticket.claimed}}
+            {{#if isFrench}}Ce bon a deja ete revendiquee
+            {{else}}This voucher has already been claimed{{/if}}
+        {{else}}
+            {{#if hasTimeRemaining}}
+                {{#if isFrench}}Ce bon a:<br>{{excessTime}}<br>de la fin sur elle
+                {{else}}This voucher has:<br>{{excessTime}}<br>remaining on it
+                {{/if}}
+            {{else}}
+                {{#if isFrench}}Il n'y a pas le temps restant sur ??ce billet
+                {{else}}There is no time remaining on this ticket
+                {{/if}}
+            {{/if}}
+        {{/if}}
+        </div>
+        <div class="grid__col grid__col--2-of-5 payContainerControl" style="height: 100%">
+        {{#if hasTimeRemaining}}
+            <button class="btn btn-default btn-print payContainerControl btn-got-it" style="margin-top: 25px">{{#if isFrench}}Imprimer Voucher{{else}}Print Voucher{{/if}}</button>
+        {{else}}
+            <button class="btn btn-default btn-print payContainerControl btn-back" style="margin-top: 25px">{{#if isFrench}}Precedent{{else}}Back{{/if}}</button>
+        {{/if}}
+        </div>
+    </div>
 </template>
