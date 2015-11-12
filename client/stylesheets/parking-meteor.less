@@ -138,7 +138,7 @@ body {
   background-color: @offwhite;
   font-size: 0.7em;
   font-family: 'Roboto', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   color: @darkgrey;
   text-align: center;
   padding-top: 5px;
@@ -147,7 +147,7 @@ body {
 .weatherTemp {
   width: 100%;
   height: auto;
-  background-color: @primcolour;
+  background-color: @darkgrey;
   font-size: 1.5em;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
@@ -426,24 +426,36 @@ body {
 .submit:hover {
   background-color: #227979;
 }
-.payContainer {
-  height: 150px;
-  background: @seccolour;
-  display: table-cell;
-  vertical-align: middle;
-  width: 300px;
+.addTimeContainer {
+  height: auto;
+  width: auto;
+  background-color: @offwhite;
+  position: absolute;
+  display: table;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
+  margin-top: 40px;
+}
+.payContainer {
+  height: 200px;
+  width: auto;
+  background: @seccolour;
+  margin: auto auto;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  float: left;
 }
 .payContainerControl {
-  background: white;
-  height: 250px;
+  height: 200px;
   width: 300px;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  color: black;
+  color: @darkgrey;
   font-size: 1em;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 .steps {
   width: 100%;
@@ -520,8 +532,9 @@ body {
   font-weight: 400;
   color: @offwhite;
   font-size: 1em;
-  padding: 10px;
-
+  margin-top: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 .btn-remove-time {
   width: 150px !important;
@@ -530,7 +543,9 @@ body {
   font-weight: 400;
   color: @offwhite;
   font-size: 1em;
-  padding: 10px;
+  margin-bottom: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 .btn:hover {
   background: @seccolour;
