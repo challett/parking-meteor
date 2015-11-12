@@ -7,23 +7,6 @@
         {{#if isFrench}}Ajouter ou supprimer des temps (0.50 $ par demi-heure){{else}}Add or remove time ($0.50 per half hour){{/if}}
     </h1>
     <br>
-<<<<<<< HEAD
-    <div class="grid__col grid__col--6-of-12">
-        {{#if isFrench}}Temps ajoute: {{timeAdded}}{{else}}Time added: {{timeAdded}} hr{{/if}} <br>
-        {{#if voucherValue}}
-            Voucher Credit: {{voucherValue}}<br>
-        {{/if}}
-        {{#if isFrench}}Debut a: {{currentTime}}{{else}}Start time: {{currentTime}}{{/if}} <br>
-        {{#if isFrench}}Expire a: {{endTime}}{{else}}Expires at: {{endTime}}{{/if}} <br>
-    </div>
-    <div class="grid__col grid__col--3-of-12">
-        <button class="btn btn-default btn-add-time">+0.5 hr</button> <br>
-        <button class="btn btn-default btn-remove-time" disabled={{noMoneyInserted}}>-0.5 hr</button> <br>
-    </div>
-    <div class="grid__col grid__col--3-of-12">
-        <button class="btn btn-default btn-print" disabled={{noMoneyInserted}}>
-            {{#if isFrench}}Billet imprime{{else}}Print ticket{{/if}}
-        </button>
     <div>
         <div class="grid__col grid__col--4-of-12 payContainer">
             {{#if isFrench}}Temps ajoute: {{timeAdded}}{{else}}Time added: {{timeAdded}} hr{{/if}} <br>
