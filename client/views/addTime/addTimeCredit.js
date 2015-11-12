@@ -3,7 +3,7 @@
  */
 Template.addTimeCredit.helpers({
     timeAdded: function () {
-        return Session.get('moneyInserted') + " hours"
+        return Session.get('moneyInserted')
     },
     noMoneyInserted: function () {
         return !(Session.get('moneyInserted'))
